@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie | Studio Míša - Fotografie našeho studia a služeb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #E5C1C5;
+            --primary-dark: #D0A0A6;
+            --secondary: #1A1A1A;
+            --secondary-light: #333333;
+            --accent: #F5E8EA;
+            --text: #1A1A1A;
+            --text-light: #777777;
+            --background: #FFFFFF;
+            --light-bg: #F9F5F6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--primary);
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+        
+        .nav-item {
+            margin: 0 20px;
+        }
+        
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            height: 2px;
+            width: 100%;
+            background-color: var(--secondary);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(var(--primary-dark) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Gallery Filters */
+        .gallery-filters {
+            padding: 60px 0;
+            text-align: center;
+            background-color: var(--background);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-light);
+            background-color: var(--light-bg);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background-color: var(--secondary);
+            color: var(--background);
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 0 0 100px;
+            background-color: var(--background);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .gallery-category {
+            font-size: 13px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .lightbox-close i {
+            color: var(--secondary);
+            font-size: 20px;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-nav:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        .lightbox-nav i {
+            color: var(--secondary);
+            font-size: 20px;
+        }
+
+        /* Instagram Section */
+        .instagram-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .instagram-header {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .instagram-handle {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            color: var(--primary-dark);
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .instagram-handle i {
+            font-size: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-copyright {
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-link {
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .lightbox-prev {
+                left: 15px;
+            }
+
+            .lightbox-next {
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Studio Míša</a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Úvod</a></li>
+                        <li class="nav-item"><a href="o-nas.html" class="nav-link">O nás</a></li>
+                        <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
+                        <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
+                        <li class="nav-item"><a href="galerie.html" class="nav-link active">Galerie</a></li>
+                        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
+                    </ul>
+                    
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-subtitle">Naše práce</div>
+                <h1 class="page-title">Galerie</h1>
+                <p class="page-description">Prohlédněte si fotografie našeho studia, našich služeb a spokojených klientů. Každý obrázek vypovídá o naší lásce k práci a profesionalitě.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Vše</button>
+                <button class="filter-btn" data-filter="studio">Studio</button>
+                <button class="filter-btn" data-filter="kosmetika">Kosmetika</button>
+                <button class="filter-btn" data-filter="masaze">Masáže</button>
+                <button class="filter-btn" data-filter="nehty">Nehty</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Studio Images -->
+                <div class="gallery-item" data-category="studio">
+                    <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Recepce studia">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Recepce studia</div>
+                        <div class="gallery-category">Studio</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="studio">
+                    <img src="https://images.unsplash.com/photo-1519235106638-30cc49b5dbc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Relaxační místnost">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Relaxační místnost</div>
+                        <div class="gallery-category">Studio</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="studio">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Kosmetický salonek">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Kosmetický salonek</div>
+                        <div class="gallery-category">Studio</div>
+                    </div>
+                </div>
+
+                <!-- Kosmetika Images -->
+                <div class="gallery-item" data-category="kosmetika">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ošetření pleti">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Ošetření pleti</div>
+                        <div class="gallery-category">Kosmetika</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="kosmetika">
+                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Masáž obličeje">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Masáž obličeje</div>
+                        <div class="gallery-category">Kosmetika</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="kosmetika">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Produkty Rosa Graf">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Produkty Rosa Graf</div>
+                        <div class="gallery-category">Kosmetika</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="kosmetika">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Laminace řas">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Laminace řas</div>
+                        <div class="gallery-category">Kosmetika</div>
+                    </div>
+                </div>
+
+                <!-- Masáže Images -->
+                <div class="gallery-item" data-category="masaze">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Relaxační masáž">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Relaxační masáž</div>
+                        <div class="gallery-category">Masáže</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="masaze">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Masážní oleje">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Masážní oleje</div>
+                        <div class="gallery-category">Masáže</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="masaze">
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Lávové kameny">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Masáž lávovými kameny</div>
+                        <div class="gallery-category">Masáže</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="masaze">
+                    <img src="https://images.unsplash.com/photo-1591343395902-bde56966bc6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Sportovní masáž">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Sportovní masáž</div>
+                        <div class="gallery-category">Masáže</div>
+                    </div>
+                </div>
+
+                <!-- Nehty Images -->
+                <div class="gallery-item" data-category="nehty">
+                    <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pedikúra">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Profesionální pedikúra</div>
+                        <div class="gallery-category">Nehty</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="nehty">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Manikúra">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Manikúra s gellkem</div>
+                        <div class="gallery-category">Nehty</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="nehty">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gelové nehty">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Gelové nehty</div>
+                        <div class="gallery-category">Nehty</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="nehty">
+                    <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Barevné laky">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Široká nabídka laků</div>
+                        <div class="gallery-category">Nehty</div>
+                    </div>
+                </div>
+
+                <!-- More Studio Images -->
+                <div class="gallery-item" data-category="studio">
+                    <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Čekárna">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Příjemná čekárna</div>
+                        <div class="gallery-category">Studio</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="kosmetika">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Spokojená klientka">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Spokojené klientky</div>
+                        <div class="gallery-category">Kosmetika</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="container">
+            <div class="instagram-header">
+                <h2 class="section-title">Sledujte nás na Instagramu</h2>
+                <p class="section-description">Denní inspirace, novinky a akční nabídky přímo na vašem mobilním telefonu.</p>
+            </div>
+            <div class="instagram-handle">
+                <i class="fab fa-instagram"></i>
+                <span>@studiomishabranik</span>
+            </div>
+            <a href="https://www.instagram.com/studiomishabranik/" target="_blank" class="btn">Následovat</a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" id="lightbox-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="lightbox-nav lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+        <div class="lightbox-nav lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-copyright">
+                    &copy; 2025 Studio Míša. Všechna práva vyhrazena.
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Domů</a>
+                    <a href="o-nas.html" class="footer-link">O nás</a>
+                    <a href="sluzby.html" class="footer-link">Služby</a>
+                    <a href="cenik.html" class="footer-link">Ceník</a>
+                    <a href="galerie.html" class="footer-link">Galerie</a>
+                    <a href="kontakt.html" class="footer-link">Kontakt</a>
+                    <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gallery Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+
+        let currentImageIndex = 0;
+        let visibleImages = [];
+
+        function updateVisibleImages() {
+            visibleImages = Array.from(galleryItems).filter(item => item.style.display !== 'none');
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateVisibleImages();
+                currentImageIndex = visibleImages.indexOf(item);
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+            lightboxImg.src = visibleImages[currentImageIndex].querySelector('img').src;
+        });
+
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % visibleImages.length;
+            lightboxImg.src = visibleImages[currentImageIndex].querySelector('img').src;
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            } else if (e.key === 'ArrowLeft') {
+                lightboxPrev.click();
+            } else if (e.key === 'ArrowRight') {
+                lightboxNext.click();
+            }
+        });
+
+        // Initialize visible images
+        updateVisibleImages();
+    </script>
+</body>
+</html>
