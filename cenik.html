@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceník | Studio Míša - Ceny kosmetiky, masáží, manikúry a pedikúry</title>
+    <title>Ceník | Studio Mísha - Ceny kosmetiky, masáží, manikúry a pedikúry</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ceník služeb Studio Mísha - kosmetika, masáže, manikúra, pedikúra. Transparentní ceny a prémiová kvalita služeb v Praze 4 Braníku.">
+    <meta name="keywords" content="ceník kosmetika Praha, ceny masáže Braník, ceník manikúra pedikúra, Studio Mísha ceny">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/cenik.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/cenik.html">
+    <meta property="og:title" content="Ceník | Studio Mísha - Ceny kosmetiky, masáží, manikúry a pedikúry">
+    <meta property="og:description" content="Přehledný ceník všech našich služeb. Kosmetické ošetření, masáže, manikúra a pedikúra za férové ceny.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/cenik.html">
+    <meta property="twitter:title" content="Ceník | Studio Mísha - Ceny kosmetiky, masáží, manikúry a pedikúry">
+    <meta property="twitter:description" content="Přehledný ceník všech našich služeb. Kosmetické ošetření, masáže, manikúra a pedikúra za férové ceny.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -359,15 +383,21 @@
 
         .info-box {
             background-color: var(--background);
-            padding: 40px;
-            border-radius: 10px;
+            padding: 35px 30px;
+            border-radius: 5px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .info-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background-color: var(--accent);
             border-radius: 50%;
             display: flex;
@@ -380,14 +410,14 @@
 
         .info-title {
             font-family: 'Playfair Display', serif;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--secondary);
             margin-bottom: 12px;
         }
 
         .info-text {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-light);
             line-height: 1.6;
         }
@@ -720,11 +750,12 @@
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">Studio Míša</a>
+                <a href="index.html" class="logo">Studio Mísha</a>
                 
                 <div class="nav-menu">
                     <ul class="nav-list">
@@ -778,7 +809,7 @@
 
             <div class="mobile-social">
                 <a href="https://www.facebook.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-instagram"></i></a>
+               
             </div>
         </div>
     </div>
@@ -828,7 +859,7 @@
 
                         <div class="price-item">
                             <div class="price-service">
-                                <div class="price-name">Ošetření pleti BIO Oxalia</div>
+                                <div class="price-name">Ošetření pleti BIO Kúr</div>
                                 <div class="price-description">Kompletní ošetření pleti v bio kvalitě včetně masáže obličeje a dekoltu, čištění pleti, peelingu, séra, úpravy obočí, maska obličej+dekolt+oční okolí a závěrečného krému</div>
                             </div>
                             <div class="price-details">
@@ -1317,7 +1348,7 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-copyright">
-                    &copy; <span id="year"></span> Studio Míša. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
                 </div>
 
                 <div class="footer-links">

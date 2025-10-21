@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Často kladené otázky | Studio Míša - Odpovědi na vaše dotazy</title>
+    <title>Často kladené otázky | Studio Mísha - Odpovědi na vaše dotazy</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Často kladené otázky o službách Studio Mísha. Zjistěte více o rezervacích, platebních metodách, parkování a našich kosmetických produktech.">
+    <meta name="keywords" content="FAQ Studio Mísha, často kladené otázky kosmetika, otázky manikúra pedikúra Praha">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/faq.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/faq.html">
+    <meta property="og:title" content="FAQ | Studio Mísha - Často kladené otázky">
+    <meta property="og:description" content="Odpovědi na nejčastější dotazy ohledně našich služeb, rezervací a produktů.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/faq.html">
+    <meta property="twitter:title" content="FAQ | Studio Mísha - Často kladené otázky">
+    <meta property="twitter:description" content="Odpovědi na nejčastější dotazy ohledně našich služeb, rezervací a produktů.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -656,14 +680,153 @@
                 gap: 20px;
             }
         }
+
+        /* Loader Styles */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-inner {
+            text-align: center;
+            position: relative;
+        }
+
+        .loader-logo {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #E5C1C5;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: loaderCircle 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .loader-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #1A1A1A;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: loaderText 2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        .loader-progress {
+            position: relative;
+            width: 200px;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .loader-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #E5C1C5;
+            animation: loaderBar 2.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+        }
+
+        .loader-caption {
+            margin-top: 20px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #777777;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: loaderCaption 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+        }
+
+        @keyframes loaderCircle {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes loaderText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes loaderBar {
+            0% { width: 0; }
+            60% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes loaderCaption {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
+
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <div class="loader-circle"></div>
+                <div class="loader-text">SM</div>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-caption">Studio Míša</div>
+        </div>
+    </div>
+
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">Studio Míša</a>
+                <a href="index.html" class="logo">Studio Mísha</a>
 
                 <div class="nav-menu">
                     <ul class="nav-list">
@@ -842,7 +1005,7 @@
                                 Pracujeme výhradně s prémiovými kosmetickými značkami:
                                 <ul>
                                     <li>Rosa Graf - německá prémiová kosmetika</li>
-                                    <li>BIO Oxalia - bio kosmetika s přírodními aktivními složkami</li>
+                                    <li>BIO Kúr - bio kosmetika s přírodními aktivními složkami</li>
                                     <li>Gisele Delorme - luxusní francouzská kosmetika</li>
                                     <li>Aminta Med - dermatologická kosmetika s mikrostříbrem</li>
                                 </ul>
@@ -1120,7 +1283,7 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-copyright">
-                    &copy; <span id="year"></span> Studio Míša. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
                 </div>
 
                 <div class="footer-links">
@@ -1221,6 +1384,24 @@
                 toggleClass: 'active',
                 once: true
             });
+        });
+
+        // Functional loader - waits for page to load with minimum display time
+        const loader = document.querySelector('.loader');
+        const minLoadTime = 1500; // Minimum time to show loader (ms)
+        const startTime = Date.now();
+
+        window.addEventListener('load', () => {
+            const elapsedTime = Date.now() - startTime;
+            const remainingTime = Math.max(0, minLoadTime - elapsedTime);
+
+            setTimeout(() => {
+                loader.classList.add('loaded');
+                // Hide loader completely after animation
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, remainingTime);
         });
     </script>
 </body>

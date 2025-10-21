@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Služby | Studio Míša - Profesionální kosmetika, masáže, manikúra a pedikúra</title>
+    <title>Služby | Studio Mísha - Profesionální kosmetika, masáže, manikúra a pedikúra</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Profesionální kosmetické služby, masáže, manikúra a pedikúra v Praze 4. Prémiová kosmetika Rosa Graf, BIO Kúr, Gisele Delorme a Aminta Med.">
+    <meta name="keywords" content="kosmetické služby Praha, masáže Praha 4, manikúra pedikúra Braník, Rosa Graf, Gisele Delorme, BIO Kúr">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/sluzby.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/sluzby.html">
+    <meta property="og:title" content="Služby | Studio Mísha - Profesionální kosmetika, masáže, manikúra a pedikúra">
+    <meta property="og:description" content="Kompletní péče o pleť, relaxační masáže, profesionální manikúra a pedikúra. Prémiová kosmetika a individuální přístup.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/sluzby.html">
+    <meta property="twitter:title" content="Služby | Studio Mísha - Profesionální kosmetika, masáže, manikúra a pedikúra">
+    <meta property="twitter:description" content="Kompletní péče o pleť, relaxační masáže, profesionální manikúra a pedikúra. Prémiová kosmetika a individuální přístup.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -237,10 +261,15 @@
 
         .service-detail-image {
             position: relative;
+            width: 100%;
+            height: 500px;
         }
 
         .service-detail-image img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
             border-radius: 10px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
@@ -396,10 +425,10 @@
 
         .product-card {
             background-color: var(--background);
-            padding: 40px 30px;
-            border-radius: 10px;
+            padding: 35px 25px;
+            border-radius: 5px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
 
@@ -409,29 +438,30 @@
         }
 
         .product-icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background-color: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 32px;
+            margin: 0 auto 20px;
+            font-size: 28px;
             color: var(--primary-dark);
         }
 
         .product-name {
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--secondary);
             margin-bottom: 10px;
         }
 
         .product-description {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-light);
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -683,8 +713,13 @@
                 order: 0;
             }
 
+            .service-detail-image {
+                height: 350px;
+            }
+
             .products-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -695,6 +730,10 @@
 
             .service-detail-title {
                 font-size: 32px;
+            }
+
+            .service-detail-image {
+                height: 300px;
             }
 
             .products-grid {
@@ -710,11 +749,12 @@
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">Studio Míša</a>
+                <a href="index.html" class="logo">Studio Mísha</a>
                 
                 <div class="nav-menu">
                     <ul class="nav-list">
@@ -797,7 +837,7 @@
                 <div class="service-detail-content">
                     <div class="service-detail-subtitle">Kosmetické služby</div>
                     <h2 class="service-detail-title">Kompletní péče o pleť</h2>
-                    <p class="service-detail-description">Naše kosmetické služby zahrnují profesionální ošetření pleti s využitím prémiových produktů Rosa Graf, BIO Oxalia a Gisele Delorme. Každé ošetření je individuálně přizpůsobeno typu pleti a aktuálním potřebám klienta.</p>
+                    <p class="service-detail-description">Naše kosmetické služby zahrnují profesionální ošetření pleti s využitím prémiových produktů Rosa Graf, BIO Kúr a Gisele Delorme. Každé ošetření je individuálně přizpůsobeno typu pleti a aktuálním potřebám klienta.</p>
                     
                     <ul class="service-features">
                         <li class="service-feature">
@@ -906,7 +946,7 @@
             <div class="service-detail-item">
                 <div class="service-detail-image">
                     <div class="service-detail-number">04</div>
-                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Manikúra">
+                    <img src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlZGljdXJlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900" alt="Manikúra">
                 </div>
                 <div class="service-detail-content">
                     <div class="service-detail-subtitle">Péče o ruce</div>
@@ -946,7 +986,7 @@
     <section class="products-section">
         <div class="container">
             <div class="products-header">
-                <h2 class="section-title">Používané produkty</h2>
+                <h2 class="section-title">Používané značky</h2>
                 <p class="section-description">Pracujeme pouze s prémiovými kosmetickými značkami, které zajišťují špičkovou kvalitu a účinnost našich služeb.</p>
             </div>
 
@@ -959,12 +999,12 @@
 
                 <div class="product-card">
                     <div class="product-icon"><i class="fas fa-leaf"></i></div>
-                    <h3 class="product-name">BIO Oxalia</h3>
+                    <h3 class="product-name">BIO Kúr</h3>
                     <p class="product-description">Bio kosmetika s přírodními aktivními složkami</p>
                 </div>
 
                 <div class="product-card">
-                    <div class="product-icon"><i class="fas fa-sparkles"></i></div>
+                    <div class="product-icon"><i class="fas fa-crown"></i></div>
                     <h3 class="product-name">Gisele Delorme</h3>
                     <p class="product-description">Luxusní francouzská kosmetika pro náročnou klientelu</p>
                 </div>
@@ -995,7 +1035,7 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-copyright">
-                    &copy; <span id="year"></span> Studio Míša. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
                 </div>
                 
                 <div class="footer-links">

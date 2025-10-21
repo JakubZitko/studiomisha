@@ -3,7 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | Studio Míša - Kosmetika Masáže Manikúra Pedikúra Praha 4</title>
+    <title>Kontakt | Studio Mísha - Kosmetika Masáže Manikúra Pedikúra Praha 4</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kontaktujte Studio Mísha - Branická 573/11, Praha 4 Braník. Telefon: +420 739 990 333. Email: studiomisha@gmail.com. Otevřeno denně 9:00 - 19:00.">
+    <meta name="keywords" content="kontakt Studio Mísha, kosmetika Braník adresa, rezervace Praha 4, Branická 573/11">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/kontakt.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/kontakt.html">
+    <meta property="og:title" content="Kontakt | Studio Mísha - Kontaktní údaje a mapa">
+    <meta property="og:description" content="Navštivte nás v Braníku. Branická 573/11, Praha 4. Tel: +420 739 990 333. Rezervujte si termín online nebo telefonicky.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/kontakt.html">
+    <meta property="twitter:title" content="Kontakt | Studio Mísha - Kontaktní údaje a mapa">
+    <meta property="twitter:description" content="Navštivte nás v Braníku. Branická 573/11, Praha 4. Tel: +420 739 990 333. Rezervujte si termín online nebo telefonicky.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -228,10 +252,11 @@
         }
 
         .contact-card {
-            background-color: var(--light-bg);
-            padding: 50px 40px;
+            background-color: var(--background);
+            padding: 40px 30px;
             border-radius: 5px;
             text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
 
@@ -241,30 +266,31 @@
         }
 
         .contact-card-icon {
-            width: 80px;
-            height: 80px;
-            background-color: var(--primary);
+            width: 70px;
+            height: 70px;
+            background-color: var(--accent);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
             font-size: 32px;
-            color: var(--secondary);
+            color: var(--primary-dark);
         }
 
         .contact-card-title {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: var(--secondary);
         }
 
         .contact-card-text {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-light);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
 
         .contact-card-link {
@@ -277,19 +303,19 @@
             color: var(--secondary);
         }
 
-        /* Map and Form Section */
+        /* Map and Hours Section */
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .contact-map {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            height: 500px;
+            height: 600px;
         }
 
         .contact-map iframe {
@@ -298,68 +324,20 @@
             border: none;
         }
 
-        .contact-form-container {
+        .hours-container {
             background-color: var(--light-bg);
-            padding: 50px;
+            padding: 40px;
             border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: fit-content;
         }
 
-        .form-title {
+        .hours-title {
             font-family: 'Playfair Display', serif;
             font-size: 32px;
             font-weight: 600;
             margin-bottom: 30px;
             color: var(--secondary);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            color: var(--secondary);
-        }
-
-        .form-input,
-        .form-textarea,
-        .form-select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            transition: var(--transition);
-            background-color: var(--background);
-        }
-
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        /* Hours Table */
-        .hours-section {
-            background-color: var(--light-bg);
-            padding: 80px 0;
-        }
-
-        .hours-inner {
-            max-width: 800px;
-            margin: 0 auto;
             text-align: center;
         }
 
@@ -688,7 +666,7 @@
             .nav-list {
                 display: none;
             }
-            
+
             .mobile-toggle {
                 display: flex;
             }
@@ -704,6 +682,10 @@
             .transport-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-map {
+                height: 400px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -711,13 +693,21 @@
                 font-size: 42px;
             }
 
-            .contact-form-container {
-                padding: 30px;
+            .hours-container {
+                padding: 25px;
+            }
+
+            .hours-title {
+                font-size: 26px;
             }
 
             .hours-table th,
             .hours-table td {
-                padding: 20px;
+                padding: 15px;
+            }
+
+            .contact-map {
+                height: 350px;
             }
 
             .footer-inner {
@@ -726,14 +716,162 @@
                 gap: 20px;
             }
         }
+
+        /* Enhanced Contact Card Styling */
+        .contact-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Section Decorations */
+        .section-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(229, 193, 197, 0.1) 0%, rgba(229, 193, 197, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .cta-inner {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background-color: white;
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn.secondary {
+            background-color: transparent;
+            color: white;
+        }
+
+        .cta-btn.secondary:hover {
+            background-color: white;
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 36px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .maps-buttons {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="index.html" class="logo">Studio Míša</a>
+                <a href="index.html" class="logo">Studio Mísha</a>
                 
                 <div class="nav-menu">
                     <ul class="nav-list">
@@ -808,7 +946,7 @@
     <section class="contact-grid">
         <div class="container">
             <div class="contact-cards">
-                <div class="contact-card">
+                <div class="contact-card fade-in">
                     <div class="contact-card-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
@@ -817,7 +955,7 @@
                     <a href="tel:+420739990333" class="contact-card-link">+420 739 990 333</a>
                 </div>
 
-                <div class="contact-card">
+                <div class="contact-card fade-in">
                     <div class="contact-card-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -826,92 +964,55 @@
                     <a href="mailto:studiomisha@gmail.com" class="contact-card-link">studiomisha@gmail.com</a>
                 </div>
 
-                <div class="contact-card">
+                <div class="contact-card fade-in">
                     <div class="contact-card-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <h3 class="contact-card-title">Adresa</h3>
                     <p class="contact-card-text">Branická 573/11<br>Praha 4 - Braník, 147 00</p>
-                    <a href="https://maps.google.com/?q=Studio+Míša+Branická+573/11+Praha+4" target="_blank" class="contact-card-link">Navigovat</a>
+                    <a href="https://www.google.com/maps/dir/Vaše+poloha+/Studio+Mísha,+Branická,+Praha+4/@50.039895,14.3693766,16145m/data=!3m2!1e3!4b1!4m8!4m7!1m0!1m5!1m1!1s0x470b951eeda42f87:0xfbf3b33f08bd942e!2m2!1d14.4104875!2d50.0398898?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-card-link">Navigovat</a>
                 </div>
             </div>
 
-            <!-- Map and Contact Form -->
+            <!-- Map and Opening Hours -->
             <div class="contact-content">
-                <div class="contact-map">
+                <div class="contact-map fade-in-left">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.5463216125364!2d14.412358976920092!3d50.042166671438885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94645edd7df5%3A0xdf45b05c00fa3c1f!2sStudio%20M%C3%AD%C5%A1a!5e0!3m2!1sen!2scz!4v1680862340651!5m2!1sen!2scz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
-                <div class="contact-form-container">
-                    <h2 class="form-title">Kontaktní formulář</h2>
-                    <div class="form-group">
-                        <label class="form-label">Jméno a příjmení</label>
-                        <input type="text" class="form-input" placeholder="Vaše jméno">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-input" placeholder="vas@email.cz">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Telefon</label>
-                        <input type="tel" class="form-input" placeholder="+420 xxx xxx xxx">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Služba</label>
-                        <select class="form-select">
-                            <option>Vyberte službu</option>
-                            <option>Kosmetika</option>
-                            <option>Masáže</option>
-                            <option>Pedikúra</option>
-                            <option>Manikúra</option>
-                            <option>Jiné</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Zpráva</label>
-                        <textarea class="form-textarea" placeholder="Vaše zpráva..."></textarea>
-                    </div>
-                    <button class="btn">Odeslat zprávu</button>
+                <div class="hours-container fade-in-right">
+                    <h2 class="hours-title">Otevírací doba</h2>
+                    <table class="hours-table">
+                        <tr>
+                            <th>Pondělí</th>
+                            <td>9:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <th>Úterý</th>
+                            <td>9:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <th>Středa</th>
+                            <td>9:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <th>Čtvrtek</th>
+                            <td>9:00 – 19:00</td>
+                        </tr>
+                        <tr>
+                            <th>Pátek</th>
+                            <td>9:00 – 16:00</td>
+                        </tr>
+                        <tr>
+                            <th>Sobota</th>
+                            <td>Zavřeno</td>
+                        </tr>
+                        <tr>
+                            <th>Neděle</th>
+                            <td>Zavřeno</td>
+                        </tr>
+                    </table>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Opening Hours -->
-    <section class="hours-section">
-        <div class="container">
-            <div class="hours-inner">
-                <h2 class="section-title">Otevírací doba</h2>
-                <table class="hours-table">
-                    <tr>
-                        <th>Pondělí</th>
-                        <td>9:00 – 19:00</td>
-                    </tr>
-                    <tr>
-                        <th>Úterý</th>
-                        <td>9:00 – 19:00</td>
-                    </tr>
-                    <tr>
-                        <th>Středa</th>
-                        <td>9:00 – 19:00</td>
-                    </tr>
-                    <tr>
-                        <th>Čtvrtek</th>
-                        <td>9:00 – 19:00</td>
-                    </tr>
-                    <tr>
-                        <th>Pátek</th>
-                        <td>9:00 – 16:00</td>
-                    </tr>
-                    <tr>
-                        <th>Sobota</th>
-                        <td>Zavřeno</td>
-                    </tr>
-                    <tr>
-                        <th>Neděle</th>
-                        <td>Zavřeno</td>
-                    </tr>
-                </table>
             </div>
         </div>
     </section>
@@ -919,38 +1020,54 @@
     <!-- Transport -->
     <section class="transport-section">
         <div class="container">
-            <div class="transport-inner">
+            <div class="transport-inner fade-in">
                 <h2 class="section-title">Jak se k nám dostanete</h2>
                 <p class="page-description">Naše studio se nachází v Praze 4 - Braníku, nedaleko zastávky Přístaviště.</p>
             </div>
 
             <div class="transport-grid">
-                <div class="transport-card">
+                <div class="transport-card fade-in-left">
                     <div class="transport-icon">
                         <i class="fas fa-bus"></i>
                     </div>
                     <h3 class="transport-title">Autobus</h3>
                     <ul class="transport-list">
-                        <li>Linka 118</li>
-                        <li>Linka 170</li>
-                        <li>Linka 196</li>
-                        <li>Linka 197</li>
+                        <li>Linka 118, 170, 196, 197</li>
+                        
                     </ul>
                     <p class="contact-card-text" style="margin-top: 15px;">Zastávka: Přístaviště</p>
                 </div>
 
-                <div class="transport-card">
+                <div class="transport-card fade-in-right">
                     <div class="transport-icon">
                         <i class="fas fa-train"></i>
                     </div>
                     <h3 class="transport-title">Tramvaj</h3>
                     <ul class="transport-list">
-                        <li>Linka 2</li>
-                        <li>Linka 3</li>
-                        <li>Linka 17</li>
-                        <li>Linka 21</li>
+                        <li>Linka 2, 3, 17, 21</li>
+            
                     </ul>
                     <p class="contact-card-text" style="margin-top: 15px;">Zastávka: Přístaviště</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-inner fade-in">
+                <h2 class="cta-title">Těšíme se na vaši návštěvu</h2>
+                <p class="cta-description">Rezervujte si termín již dnes a dopřejte si péči, kterou si zasloužíte. Jsme tu pro vás každý všední den.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+420739990333" class="cta-btn">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Zavolejte nám</span>
+                    </a>
+                    <a href="mailto:studiomisha@gmail.com" class="cta-btn secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Napište nám</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -961,7 +1078,7 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-copyright">
-                    &copy; <span id="year"></span> Studio Míša. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
                 </div>
                 
                 <div class="footer-links">
