@@ -1361,28 +1361,48 @@
             .section-padding {
                 padding: 80px 0;
             }
-            
+
             .hero-title {
                 font-size: 40px;
             }
-            
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-buttons .btn {
+                font-size: 12px;
+                padding: 12px 20px;
+            }
+
             .section-title {
                 font-size: 36px;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .team-grid {
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
-            
+
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
                 gap: 20px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-link {
+                font-size: 13px;
             }
             
             .price-item {
@@ -1593,15 +1613,21 @@
         <div class="mobile-contact">
             <h4 class="mobile-contact-title">Kontaktujte nás</h4>
             <div class="mobile-contact-item">
-                <div class="mobile-contact-icon">📍</div>
+                <div class="mobile-contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
                 <div class="mobile-contact-text">Branická 573/11, Praha 4 - Braník</div>
             </div>
             <div class="mobile-contact-item">
-                <div class="mobile-contact-icon">📞</div>
+                <div class="mobile-contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
                 <div class="mobile-contact-text">+420 739 990 333</div>
             </div>
             <div class="mobile-contact-item">
-                <div class="mobile-contact-icon">✉️</div>
+                <div class="mobile-contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
                 <div class="mobile-contact-text">studiomisha@gmail.com</div>
             </div>
             
