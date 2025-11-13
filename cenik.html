@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon_io-9/favicon-32x32.png">
+    <title>Ceník | Studio Mísha - Ceny kosmetiky, masáží, manikúry a pedikúry</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ceník služeb Studio Mísha - kosmetika, masáže, manikúra, pedikúra. Transparentní ceny a prémiová kvalita služeb v Praze 4 Braníku.">
+    <meta name="keywords" content="ceník kosmetika Praha, ceny masáže Braník, ceník manikúra pedikúra, Studio Mísha ceny">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/cenik.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/cenik.html">
+    <meta property="og:title" content="Ceník | Studio Mísha - Ceny kosmetiky, masáží, manikúry a pedikúry">
+    <meta property="og:description" content="Přehledný ceník všech našich služeb. Kosmetické ošetření, masáže, manikúra a pedikúra za férové ceny.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/cenik.html">
+    <meta property="twitter:title" content="Ceník | Studio Mísha - Ceny kosmetiky, masáží, manikúry a pedikúry">
+    <meta property="twitter:description" content="Přehledný ceník všech našich služeb. Kosmetické ošetření, masáže, manikúra a pedikúra za férové ceny.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #E5C1C5;
+            --primary-dark: #D0A0A6;
+            --secondary: #1A1A1A;
+            --secondary-light: #333333;
+            --accent: #F5E8EA;
+            --text: #1A1A1A;
+            --text-light: #777777;
+            --background: #FFFFFF;
+            --light-bg: #F9F5F6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--primary);
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+        
+        .nav-item {
+            margin: 0 20px;
+        }
+        
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            height: 2px;
+            width: 100%;
+            background-color: var(--secondary);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(var(--primary-dark) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .page-note {
+            font-size: 16px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        /* Price List Section */
+        .price-list-section {
+            padding: 100px 0;
+            background-color: var(--background);
+        }
+
+        .price-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .price-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .price-tab {
+            padding: 12px 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-light);
+            background-color: var(--light-bg);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .price-tab.active {
+            color: var(--background);
+            background-color: var(--secondary);
+        }
+
+        .price-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .price-category {
+            display: none;
+        }
+
+        .price-category.active {
+            display: block;
+        }
+
+        .price-category-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .category-description {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .price-table {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 25px 0;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-service {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .price-name {
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .price-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .price-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            min-width: 150px;
+        }
+
+        .price-amount {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .price-duration {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Info Boxes */
+        .info-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .info-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .info-box {
+            background-color: var(--background);
+            padding: 35px 30px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--primary-dark);
+        }
+
+        .info-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .info-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--primary);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--primary-dark) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.2;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .cta-text {
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            padding: 16px 32px;
+        }
+
+        .cta-button:hover {
+            background-color: black;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-copyright {
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-link {
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-decoration {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 193, 176, 0.05) 0%, rgba(212, 193, 176, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            height: 100%;
+            background-color: var(--background);
+            z-index: 9999;
+            padding: 100px 40px 40px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-close span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+            transform-origin: center;
+        }
+
+        .mobile-menu-close span:first-child {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-close span:last-child {
+            transform: rotate(-45deg);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .mobile-nav-link::after {
+            content: '→';
+            position: absolute;
+            right: 10px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-contact {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .mobile-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .mobile-contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .mobile-contact-text {
+            font-size: 15px;
+        }
+
+        .mobile-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .mobile-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hide-on-mobile {
+                display: none;
+            }
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .info-boxes {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+            }
+
+            .price-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .price-service {
+                padding-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .price-details {
+                align-items: flex-start;
+            }
+
+            .price-table {
+                padding: 25px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-link {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Studio Mísha</a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Úvod</a></li>
+                        <li class="nav-item"><a href="o-nas.html" class="nav-link">O nás</a></li>
+                        <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
+                        <li class="nav-item"><a href="cenik.html" class="nav-link active">Ceník</a></li>
+                        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
+                    </ul>
+                    <a href="tel:+420739990333" class="btn hide-on-mobile" style="margin-left: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+                    
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Úvod</a></li>
+            <li class="mobile-nav-item"><a href="o-nas.html" class="mobile-nav-link">O nás</a></li>
+            <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
+            <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
+            <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
+            <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
+        </ul>
+
+        <div class="mobile-contact">
+            <a href="tel:+420739990333" class="btn" style="width: 100%; text-align: center; margin-bottom: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+            <h4 class="mobile-contact-title">Kontaktujte nás</h4>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="mobile-contact-text">Branická 573/11, Praha 4 - Braník</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="mobile-contact-text">+420 739 990 333</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="mobile-contact-text">studiomisha@gmail.com</div>
+            </div>
+
+            <div class="mobile-social">
+                <a href="https://www.facebook.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-facebook-f"></i></a>
+               
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content fade-in">
+                <div class="page-subtitle">Naše ceny</div>
+                <h1 class="page-title">Ceník služeb</h1>
+                <p class="page-description">Nabízíme širokou škálu služeb za příznivé ceny. Všechny ceny jsou konečné a zahrnují veškeré potřebné materiály.</p>
+                <p class="page-note">Ceník platný od 1.3.2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List -->
+    <section class="price-list-section">
+        <div class="container">
+            <div class="price-tabs">
+                <div class="price-tab active" data-category="kosmetika">Kosmetika</div>
+                <div class="price-tab" data-category="masaze">Masáže</div>
+                <div class="price-tab" data-category="pedikura">Pedikúra</div>
+                <div class="price-tab" data-category="manikura">Manikúra</div>
+            </div>
+
+            <div class="price-content">
+                <!-- Kosmetika -->
+                <div class="price-category active" id="kosmetika">
+                    <div class="price-category-header">
+                        <h2 class="category-title">Kosmetické služby</h2>
+                        <p class="category-description">Profesionální péče o pleť s prémiovými produkty</p>
+                    </div>
+
+                    <div class="price-table">
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Ošetření pleti Rosa Graf</div>
+                                <div class="price-description">Kompletní odlíčení, tonizace, masáž obličej + dekolt, povrchové a hloubkové čištění, minerální maska, omlazení přístrojem Biolift + multipulle, maska obličej + dekolt + oční okolí, úprava obočí, závěrečný krém</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">950 Kč</div>
+                                <div class="price-duration">75 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Ošetření pleti Bio Kur</div>
+                                <div class="price-description">Kompletní ošetření pleti v bio kvalitě včetně masáže obličeje a dekoltu, čištění pleti, peelingu, séra, úpravy obočí, maska obličej+dekolt+oční okolí a závěrečného krému</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 150 Kč</div>
+                                <div class="price-duration">75 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Luxusní ošetření pleti Gisele Delorme</div>
+                                <div class="price-description">Kompletní odlíčení, tonizace, masáž obličej+dekolt, drenáž obličeje, gomáž, aroma komplex, sérum, maska obličej+ dekolt+ oční okolí, úprava obočí, závěrečný krém</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 350 Kč</div>
+                                <div class="price-duration">75 min</div>
+                            </div>
+                        </div>
+
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Chemický peeling Natinuel</div>
+                                <div class="price-description"></div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">od 1250 Kč</div>
+                                <div class="price-duration">75 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Hloubkové čištění pleti Aminta med</div>
+                                <div class="price-description">Odlíčení pleti, tonizace, povrchové a hloubkové čištění, minerální maska, peeling, maska s mikrostříbrem, krém s mikrostříbrem</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">560 Kč</div>
+                                <div class="price-duration">45-60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Mikromasáž očního okolí + sérum + maska</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">560 Kč</div>
+                                <div class="price-duration">45 min</div>
+                            </div>
+                        </div>
+
+                      
+
+                         
+
+                         
+
+                        
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Úprava obočí samostatně</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">150 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Barvení obočí samostatně</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">150 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Barvení řas samostatně</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">150 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">BINACIL - Balíček barvení řas + obočí + úprava</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">350 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Odstranění mílií</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">30 Kč/ks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masáže -->
+                <div class="price-category" id="masaze">
+                    <div class="price-category-header">
+                        <h2 class="category-title">Masáže</h2>
+                        <p class="category-description">Regenerace a relaxace pro vaše tělo</p>
+                    </div>
+
+                    <div class="price-table">
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Sportovní masáž</div>
+                                <div class="price-description">Masážní pistole, magneziový olej proti křečím, arnikový olej, masážní baňky</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">900 Kč</div>
+                                <div class="price-duration">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Sportovní masáž s rašelinovým zábalem</div>
+                                <div class="price-description">Při použití rašelinového zábalu na postižená místa</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">950 Kč</div>
+                                <div class="price-duration">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Relaxační masáž</div>
+                                <div class="price-description">Aromatické masážní hydratační svíčky na tělo, esenciální oleje, lávové kameny</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">900 Kč</div>
+                                <div class="price-duration">60 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Masáž šíje</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">450 Kč</div>
+                                <div class="price-duration">30 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Reflexní masáž chodidel</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">650 Kč</div>
+                                <div class="price-duration">45 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Přístrojová lymfodrenáž Ballancer Gold</div>
+                                <div class="price-description">Lymfodrenáž ve speciálních dvanáctikomorových kalhotech</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">700 Kč</div>
+                                <div class="price-duration">40 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Hloubková regenerační masáž dolních končetin v kalhotech</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">700 Kč</div>
+                                <div class="price-duration">40 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Masáž na míru</div>
+                                <div class="price-description">Po domluvě lze kombinovat veškeré techniky na problémová místa. Masírovat lze libovolnou dobu dle klienta (záda, dolní končetiny, horní končetiny, hýždě, hrudník, krční páteř, plosky nohou)</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">Dle domluvy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedikúra -->
+                <div class="price-category" id="pedikura">
+                    <div class="price-category-header">
+                        <h2 class="category-title">Pedikúra</h2>
+                        <p class="category-description">Komplexní péče o vaše nohy</p>
+                    </div>
+
+                    <div class="price-table">
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">700 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + lakování</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">900 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + aplikace gellaku</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 000 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + masáž</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">950 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + peeling</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">800 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + peeling + masáž</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 050 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + gellak + peeling</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 100 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Základní pedikúra + gellak + masáž</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 250 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Kompletní péče</div>
+                                <div class="price-description">Pedikúra, gellak, masáž, peeling</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">1 350 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Aplikace gellaku s úpravou nehtů</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">600 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Odstranění gellaku</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">100 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Lakování lakem</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">200 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Masáž nohou</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">250 Kč</div>
+                                <div class="price-duration">15 min</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Peeling nohou</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">100 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Odborné ošetření prasklin</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">100 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Kuří oko</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">100 Kč</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manikúra -->
+                <div class="price-category" id="manikura">
+                    <div class="price-category-header">
+                        <h2 class="category-title">Manikúra</h2>
+                        <p class="category-description">Profesionální péče o vaše ruce a nehty</p>
+                    </div>
+
+                    <div class="price-table">
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Manikúra (přístrojová, kombinovaná)</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">450 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Manikúra + lakování</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">650 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Manikúra + p-shine</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">650 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Manikúra s gellakem</div>
+                                <div class="price-description">Zpevnění přírodního nehtu</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">800 Kč</div>
+                            </div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-service">
+                                <div class="price-name">Manikúra s gelem</div>
+                                <div class="price-description">Potažení nehtů gelem</div>
+                            </div>
+                            <div class="price-details">
+                                <div class="price-amount">900 Kč</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Boxes -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-boxes">
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="info-title">Objednání</h3>
+                    <p class="info-text">Objednat se můžete telefonicky na +420 739 990 333 nebo osobně v našem studiu.</p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="info-title">Platba</h3>
+                    <p class="info-text">Akceptujeme hotovost i platební karty. Ceny jsou konečné včetně všech materiálů.</p>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="info-title">Dárkové poukazy</h3>
+                    <p class="info-text">Nabízíme dárkové poukazy na všechny naše služby. Ideální dárek pro vaše blízké.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-pattern"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Objednejte se ještě dnes</h2>
+                <p class="cta-text">Dopřejte si profesionální péči v příjemném prostředí našeho studia. Těšíme se na vaši návštěvu!</p>
+                <a href="kontakt.html" class="btn cta-button">Kontaktujte nás</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-copyright">
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Domů</a>
+                    <a href="o-nas.html" class="footer-link">O nás</a>
+                    <a href="sluzby.html" class="footer-link">Služby</a>
+                    <a href="cenik.html" class="footer-link">Ceník</a>
+                    <a href="kontakt.html" class="footer-link">Kontakt</a>
+                    <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-decoration"></div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Price tabs functionality
+        const tabs = document.querySelectorAll('.price-tab');
+        const categories = document.querySelectorAll('.price-category');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Hide all categories
+                categories.forEach(cat => cat.classList.remove('active'));
+
+                // Show selected category
+                const categoryId = tab.getAttribute('data-category');
+                document.getElementById(categoryId).classList.add('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        const closeMenu = () => {
+            mobileToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        mobileMenuClose.addEventListener('click', closeMenu);
+        mobileMenuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeLeftElements = document.querySelectorAll('.fade-in-left');
+        const fadeRightElements = document.querySelectorAll('.fade-in-right');
+
+        fadeElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeLeftElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeRightElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>

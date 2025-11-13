@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Studio Mísha - Kosmetika Masáže Manikúra Pedikúra Praha 4</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kontaktujte Studio Mísha - Branická 573/11, Praha 4 Braník. Telefon: +420 739 990 333. Email: studiomisha@gmail.com. Otevřeno denně 9:00 - 19:00.">
+    <meta name="keywords" content="kontakt Studio Mísha, kosmetika Braník adresa, rezervace Praha 4, Branická 573/11">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/kontakt.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/kontakt.html">
+    <meta property="og:title" content="Kontakt | Studio Mísha - Kontaktní údaje a mapa">
+    <meta property="og:description" content="Navštivte nás v Braníku. Branická 573/11, Praha 4. Tel: +420 739 990 333. Rezervujte si termín online nebo telefonicky.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/kontakt.html">
+    <meta property="twitter:title" content="Kontakt | Studio Mísha - Kontaktní údaje a mapa">
+    <meta property="twitter:description" content="Navštivte nás v Braníku. Branická 573/11, Praha 4. Tel: +420 739 990 333. Rezervujte si termín online nebo telefonicky.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #E5C1C5;
+            --primary-dark: #D0A0A6;
+            --secondary: #1A1A1A;
+            --secondary-light: #333333;
+            --accent: #F5E8EA;
+            --text: #1A1A1A;
+            --text-light: #777777;
+            --background: #FFFFFF;
+            --light-bg: #F9F5F6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+        .btn:hover {
+            color: white;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+        
+        .nav-item {
+            margin: 0 20px;
+        }
+        
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            height: 2px;
+            width: 100%;
+            background-color: var(--secondary);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* New Contact Section */
+        .contact-section {
+            padding: 100px 0;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background-color: var(--background);
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .contact-details {
+            padding: 60px;
+            background-color: var(--light-bg);
+        }
+
+        .contact-details h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .detail-item i {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-right: 20px;
+            margin-top: 5px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .detail-text strong {
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .detail-text span, .detail-text a {
+            font-size: 15px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        .detail-text a:hover {
+            color: var(--primary-dark);
+        }
+
+        .social-links {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+        .social-links a {
+            margin-right: 15px;
+            font-size: 22px;
+            color: var(--text-light);
+        }
+        .social-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 100%;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-copyright {
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-link {
+            font-size: 14px;
+        }
+        .footer-link:hover {
+            color: white;
+        }
+
+        @media (max-width: 992px) {
+            .hide-on-mobile {
+                display: none;
+            }
+            .nav-list {
+                display: none;
+            }
+            .mobile-toggle {
+                display: flex;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .map-container {
+                height: 400px;
+            }
+            .header-inner {
+                justify-content: space-between;
+            }
+            .footer-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 48px; }
+            .contact-details { padding: 40px; }
+            .contact-details h2 { font-size: 32px; }
+        }
+
+         /* Mobile Menu */
+         .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            height: 100%;
+            background-color: var(--background);
+            z-index: 9999;
+            padding: 100px 40px 40px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-close span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+            transform-origin: center;
+        }
+
+        .mobile-menu-close span:first-child {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-close span:last-child {
+            transform: rotate(-45deg);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .mobile-nav-link::after {
+            content: '→';
+            position: absolute;
+            right: 10px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-contact {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .mobile-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .mobile-contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .mobile-contact-text {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">Studio Mísha</a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Úvod</a></li>
+                    <li class="nav-item"><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
+                    <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
+                    <li class="nav-item"><a href="kontakt.html" class="nav-link active">Kontakt</a></li>
+                    <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
+                </ul>
+                <a href="tel:+420739990333" class="btn hide-on-mobile" style="margin-left: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Úvod</a></li>
+            <li class="mobile-nav-item"><a href="o-nas.html" class="mobile-nav-link">O nás</a></li>
+            <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
+            <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
+            <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
+            <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
+        </ul>
+
+        <div class="mobile-contact">
+            <a href="tel:+420739990333" class="btn" style="width: 100%; text-align: center; margin-bottom: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+            <h4 class="mobile-contact-title">Kontaktujte nás</h4>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="mobile-contact-text">Branická 573/11, Praha 4 - Braník</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="mobile-contact-text">+420 739 990 333</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="mobile-contact-text">studiomisha@gmail.com</div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/studiomishabranik/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/studiomishabranik/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="page-subtitle">Kontaktujte nás</div>
+                <h1 class="page-title">Jsme tu pro vás</h1>
+                <p class="page-description">Neváhejte nás kontaktovat, rádi zodpovíme všechny vaše dotazy a domluvíme termín návštěvy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-details">
+                    <h2>Kontaktní údaje</h2>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="detail-text">
+                            <strong>Adresa</strong>
+                            <span>Branická 573/11, Praha 4 - Braník, 147 00</span>
+                            <a href="https://www.google.com/maps/dir//Studio+Mísha,+Branická+573/11,+147+00+Praha+4-Braník/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x470b951eeda42f87:0xfbf3b33f08bd942e" target="_blank" class="btn" style="margin-top: 15px; display: inline-block; color: white !important;">Navigovat</a>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="detail-text">
+                            <strong>Telefon</strong>
+                            <a href="tel:+420739990333">+420 739 990 333</a>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="detail-text">
+                            <strong>Email</strong>
+                            <a href="mailto:studiomisha@gmail.com">studiomisha@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="detail-text">
+                            <strong>Otevírací doba</strong>
+                            <span>Pondělí - Čtvrtek: 9:00 – 19:00</span>
+                            <span style="display:block; margin-top: 5px;">Pátek: 9:00 – 16:00</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.4793752648884!2d14.408000877007979!3d50.03985061684231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b951eeda42f87%3A0xfbf3b33f08bd942e!2sStudio%20M%C3%ADsha!5e0!3m2!1scs!2scz!4v1759940002840!5m2!1scs!2scz" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-copyright">
+                &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">Domů</a>
+                <a href="o-nas.html" class="footer-link">O nás</a>
+                <a href="sluzby.html" class="footer-link">Služby</a>
+                <a href="cenik.html" class="footer-link">Ceník</a>
+                <a href="kontakt.html" class="footer-link">Kontakt</a>
+                <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+        if (mobileToggle && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            const closeMenu = () => {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            mobileMenuClose.addEventListener('click', closeMenu);
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeLeftElements = document.querySelectorAll('.fade-in-left');
+        const fadeRightElements = document.querySelectorAll('.fade-in-right');
+
+        fadeElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeLeftElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeRightElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>

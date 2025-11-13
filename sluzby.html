@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon_io-9/favicon-32x32.png">
+    <title>Služby | Studio Mísha - Profesionální kosmetika, masáže, manikúra a pedikúra</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Profesionální kosmetické služby, masáže, manikúra a pedikúra v Praze 4. Prémiová kosmetika Rosa Graf, BIO Kúr, Gisele Delorme a Aminta Med.">
+    <meta name="keywords" content="kosmetické služby Praha, masáže Praha 4, manikúra pedikúra Braník, Rosa Graf, Gisele Delorme, BIO Kúr">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/sluzby.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/sluzby.html">
+    <meta property="og:title" content="Služby | Studio Mísha - Profesionální kosmetika, masáže, manikúra a pedikúra">
+    <meta property="og:description" content="Kompletní péče o pleť, relaxační masáže, profesionální manikúra a pedikúra. Prémiová kosmetika a individuální přístup.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/sluzby.html">
+    <meta property="twitter:title" content="Služby | Studio Mísha - Profesionální kosmetika, masáže, manikúra a pedikúra">
+    <meta property="twitter:description" content="Kompletní péče o pleť, relaxační masáže, profesionální manikúra a pedikúra. Prémiová kosmetika a individuální přístup.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #E5C1C5;
+            --primary-dark: #D0A0A6;
+            --secondary: #1A1A1A;
+            --secondary-light: #333333;
+            --accent: #F5E8EA;
+            --text: #1A1A1A;
+            --text-light: #777777;
+            --background: #FFFFFF;
+            --light-bg: #F9F5F6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--primary);
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+        
+        .nav-item {
+            margin: 0 20px;
+        }
+        
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+        }
+        
+        .mobile-toggle span {
+            height: 2px;
+            width: 100%;
+            background-color: var(--secondary);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(var(--primary-dark) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Detail Section */
+        .services-detail {
+            padding: 100px 0;
+        }
+
+        .service-detail-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 120px;
+            align-items: center;
+        }
+
+        .service-detail-item:nth-child(even) .service-detail-image {
+            order: 2;
+        }
+
+        .service-detail-item:nth-child(even) .service-detail-content {
+            order: 1;
+        }
+
+        .service-detail-image {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
+
+        .service-detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-detail-number {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--secondary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-detail-content {
+            padding: 20px 0;
+        }
+
+        .service-detail-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .service-detail-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .service-detail-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .service-feature i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--primary-dark) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.2;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .cta-text {
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background-color: var(--secondary);
+            color: white;
+            padding: 16px 32px;
+        }
+
+        .cta-button:hover {
+            background-color: black;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--background);
+            padding: 35px 25px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--primary-dark);
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-copyright {
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .footer-link {
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-decoration {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 193, 176, 0.05) 0%, rgba(212, 193, 176, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            height: 100%;
+            background-color: var(--background);
+            z-index: 9999;
+            padding: 100px 40px 40px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-close span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+            transform-origin: center;
+        }
+
+        .mobile-menu-close span:first-child {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-close span:last-child {
+            transform: rotate(-45deg);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .mobile-nav-link::after {
+            content: '→';
+            position: absolute;
+            right: 10px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-contact {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .mobile-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .mobile-contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .mobile-contact-text {
+            font-size: 15px;
+        }
+
+        .mobile-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .mobile-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hide-on-mobile {
+                display: none;
+            }
+            .nav-list {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .service-detail-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service-detail-item:nth-child(even) .service-detail-image,
+            .service-detail-item:nth-child(even) .service-detail-content {
+                order: 0;
+            }
+
+            .service-detail-image {
+                height: 350px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+            }
+
+            .service-detail-title {
+                font-size: 32px;
+            }
+
+            .service-detail-image {
+                height: 300px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-link {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Studio Mísha</a>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Úvod</a></li>
+                        <li class="nav-item"><a href="o-nas.html" class="nav-link">O nás</a></li>
+                        <li class="nav-item"><a href="sluzby.html" class="nav-link active">Služby</a></li>
+                        <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
+                        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
+                    </ul>
+                    <a href="tel:+420739990333" class="btn hide-on-mobile" style="margin-left: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+                    
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Úvod</a></li>
+            <li class="mobile-nav-item"><a href="o-nas.html" class="mobile-nav-link">O nás</a></li>
+            <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
+            <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
+            <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
+            <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
+        </ul>
+
+        <div class="mobile-contact">
+            <a href="tel:+420739990333" class="btn" style="width: 100%; text-align: center; margin-bottom: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+            <h4 class="mobile-contact-title">Kontaktujte nás</h4>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="mobile-contact-text">Branická 573/11, Praha 4 - Braník</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="mobile-contact-text">+420 739 990 333</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="mobile-contact-text">studiomisha@gmail.com</div>
+            </div>
+
+            <div class="mobile-social">
+                <a href="https://www.facebook.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content fade-in">
+                <div class="page-subtitle">Naše služby</div>
+                <h1 class="page-title">Profesionální péče o vaši krásu</h1>
+                <p class="page-description">Nabízíme komplexní kosmetické služby s důrazem na individuální přístup a špičkovou kvalitu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="services-detail">
+        <div class="container">
+            <!-- Kosmetika -->
+            <div class="service-detail-item">
+                <div class="service-detail-image">
+                    <div class="service-detail-number">01</div>
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Kosmetika">
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-detail-subtitle">Kosmetické služby</div>
+                    <h2 class="service-detail-title">Kompletní péče o pleť</h2>
+                    <p class="service-detail-description">Naše kosmetické služby zahrnují profesionální ošetření pleti s využitím prémiových produktů Rosa Graf, Bio Kur a Gisele Delorme. Každé ošetření je individuálně přizpůsobeno typu pleti a aktuálním potřebám klienta. Spolupracujeme s <a href="https://www.dermaprobeauty.cz" style="color: black; font-style: italic;">www.dermaprobeauty.cz</a>. </p>
+                    
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hloubkové čištění pleti</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Omlazující ošetření</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Luxusní péče</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>BIO Ošetření</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Barvení obočí a řas</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Depilace teplím voskem</span>
+                        </li>
+                    </ul>
+
+                    <a href="cenik.html" class="btn">Zobrazit ceník</a>
+                </div>
+            </div>
+
+            <!-- Masáže -->
+            <div class="service-detail-item">
+                <div class="service-detail-image">
+                    <div class="service-detail-number">02</div>
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Masáže">
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-detail-subtitle">Masérské služby</div>
+                    <h2 class="service-detail-title">Regenerace a relaxace těla</h2>
+                    <p class="service-detail-description">Nabízíme širokou škálu masáží od sportovních po relaxační. Každá masáž je provedena s profesionální péčí a přizpůsobena vašim individuálním potřebám. Používáme kvalitní esenciální oleje, lávové kameny a další techniky pro maximální regeneraci.</p>
+                    
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Sportovní masáže pro regeneraci svalů</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Relaxační masáže s aromaterapií</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Masáže s lávovými kameny</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Reflexní masáže chodidel</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Přístrojová lymfodrenáž Ballancer Gold</span>
+                        </li>
+                    </ul>
+
+                    <a href="cenik.html" class="btn">Zobrazit ceník</a>
+                </div>
+            </div>
+
+            <!-- Pedikúra -->
+            <div class="service-detail-item">
+                <div class="service-detail-image">
+                    <div class="service-detail-number">03</div>
+                    <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Pedikúra">
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-detail-subtitle">Péče o nohy</div>
+                    <h2 class="service-detail-title">Profesionální pedikúra</h2>
+                    <p class="service-detail-description">Kompletní péče o vaše nohy zahrnující základní pedikúru, odborné ošetření problémů, relaxační masáž a možnost aplikace gellaku. Používáme kvalitní produkty a sterilní nástroje pro maximální bezpečnost a komfort.</p>
+                    
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Základní i kompletní pedikúra</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Aplikace gellaku</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Relaxační masáž nohou</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Peeling a hydratace</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ošetření prasklin a kurích ok</span>
+                        </li>
+                    </ul>
+
+                    <a href="cenik.html" class="btn">Zobrazit ceník</a>
+                </div>
+            </div>
+
+            <!-- Manikúra -->
+            <div class="service-detail-item">
+                <div class="service-detail-image">
+                    <div class="service-detail-number">04</div>
+                    <img src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlZGljdXJlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900" alt="Manikúra">
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-detail-subtitle">Péče o ruce</div>
+                    <h2 class="service-detail-title">Profesionální manikúra</h2>
+                    <p class="service-detail-description">Nabízíme přístrojovou i kombinovanou manikúru s možností zpevnění nehtů gellkem nebo gelem. Každá manikúra zahrnuje úpravu nehtů, kůžiček a péči o ruce. Na přání aplikujeme i dekorativní laky.</p>
+                    
+                    <ul class="service-features">
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Přístrojová a kombinovaná manikúra</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zpevnění nehtů gellakem</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Potažení nehtů gelem</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>P-shine lesk nehtů</span>
+                        </li>
+                        <li class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Lakování klasickými laky</span>
+                        </li>
+                    </ul>
+
+                    <a href="cenik.html" class="btn">Zobrazit ceník</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Používané značky</h2>
+                <p class="section-description">Pracujeme pouze s prémiovými kosmetickými značkami, které zajišťují špičkovou kvalitu a účinnost našich služeb.</p>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-spa"></i></div>
+                    <h3 class="product-name">Rosa Graf</h3>
+                    <p class="product-description">Německá prémiová kosmetika pro profesionální ošetření pleti</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-leaf"></i></div>
+                    <h3 class="product-name">Rosa Graf, Bio Kur, Natinuel a Gisele Delorme</h3>
+                    <p class="product-description">Bio kosmetika s přírodními aktivními složkami</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-crown"></i></div>
+                    <h3 class="product-name">Gisele Delorme</h3>
+                    <p class="product-description">Luxusní francouzská kosmetika pro náročnou klientelu</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-gem"></i></div>
+                    <h3 class="product-name">Aminta Med</h3>
+                    <p class="product-description">Dermatologická kosmetika s mikrostříbrem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-pattern"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Objednejte se na ošetření</h2>
+                <p class="cta-text">Dopřejte svému tělu profesionální péči a relaxaci v našem salonu. Těšíme se na vaši návštěvu!</p>
+                <a href="kontakt.html" class="btn cta-button">Kontaktujte nás</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-copyright">
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Domů</a>
+                    <a href="o-nas.html" class="footer-link">O nás</a>
+                    <a href="sluzby.html" class="footer-link">Služby</a>
+                    <a href="cenik.html" class="footer-link">Ceník</a>
+                    <a href="kontakt.html" class="footer-link">Kontakt</a>
+                    <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-decoration"></div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+        if (mobileToggle && mobileMenu && mobileMenuOverlay && mobileMenuClose) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            const closeMenu = () => {
+                mobileToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            mobileMenuClose.addEventListener('click', closeMenu);
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeLeftElements = document.querySelectorAll('.fade-in-left');
+        const fadeRightElements = document.querySelectorAll('.fade-in-right');
+
+        fadeElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeLeftElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeRightElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>

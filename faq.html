@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon_io-9/favicon-32x32.png">
+    <title>Často kladené otázky | Studio Mísha - Odpovědi na vaše dotazy</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Často kladené otázky o službách Studio Mísha. Zjistěte více o rezervacích, platebních metodách, parkování a našich kosmetických produktech.">
+    <meta name="keywords" content="FAQ Studio Mísha, často kladené otázky kosmetika, otázky manikúra pedikúra Praha">
+    <meta name="author" content="Studio Mísha">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://studiomisha.cz/faq.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studiomisha.cz/faq.html">
+    <meta property="og:title" content="FAQ | Studio Mísha - Často kladené otázky">
+    <meta property="og:description" content="Odpovědi na nejčastější dotazy ohledně našich služeb, rezervací a produktů.">
+    <meta property="og:image" content="https://studiomisha.cz/images/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    <meta property="og:site_name" content="Studio Mísha">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studiomisha.cz/faq.html">
+    <meta property="twitter:title" content="FAQ | Studio Mísha - Často kladené otázky">
+    <meta property="twitter:description" content="Odpovědi na nejčastější dotazy ohledně našich služeb, rezervací a produktů.">
+    <meta property="twitter:image" content="https://studiomisha.cz/images/og-image.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E5C1C5;
+            --primary-dark: #D0A0A6;
+            --secondary: #1A1A1A;
+            --secondary-light: #333333;
+            --accent: #F5E8EA;
+            --text: #1A1A1A;
+            --text-light: #777777;
+            --background: #FFFFFF;
+            --light-bg: #F9F5F6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.6;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--primary);
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-dark);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin-right: 30px;
+        }
+
+        .nav-item {
+            margin: 0 20px;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            height: 2px;
+            width: 100%;
+            background-color: var(--secondary);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--accent) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(var(--primary-dark) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .page-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .page-description {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background-color: var(--background);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            margin-bottom: 60px;
+        }
+
+        .category-header {
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .category-description {
+            font-size: 16px;
+            color: var(--text-light);
+        }
+
+        .faq-item {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(229, 193, 197, 0.1);
+        }
+
+        .question-text {
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--secondary);
+            padding-right: 20px;
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .faq-icon i {
+            color: var(--secondary);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            background-color: var(--secondary);
+        }
+
+        .faq-item.active .faq-icon i {
+            color: var(--background);
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .answer-content {
+            padding: 0 30px 25px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .answer-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .answer-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Quick Contact Section */
+        .quick-contact {
+            padding: 80px 0;
+            background-color: var(--primary);
+            text-align: center;
+        }
+
+        .quick-contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        .contact-method i {
+            font-size: 20px;
+        }
+
+        .contact-method a {
+            transition: var(--transition);
+        }
+
+        .contact-method a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-link {
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-decoration {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 193, 176, 0.05) 0%, rgba(212, 193, 176, 0) 70%);
+            pointer-events: none;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            height: 100%;
+            background-color: var(--background);
+            z-index: 9999;
+            padding: 100px 40px 40px;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-close span {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+            transform-origin: center;
+        }
+
+        .mobile-menu-close span:first-child {
+            transform: rotate(45deg);
+        }
+
+        .mobile-menu-close span:last-child {
+            transform: rotate(-45deg);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav-item {
+            margin-bottom: 20px;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .mobile-nav-link::after {
+            content: '→';
+            position: absolute;
+            right: 10px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-contact {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-contact-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .mobile-contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .mobile-contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .mobile-contact-text {
+            font-size: 15px;
+        }
+
+        .mobile-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .mobile-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hide-on-mobile {
+                display: none;
+            }
+            .nav-list {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 42px;
+            }
+
+            .category-title {
+                font-size: 28px;
+            }
+
+            .faq-question {
+                padding: 20px;
+            }
+
+            .answer-content {
+                padding: 0 20px 20px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+
+        /* Loader Styles */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-inner {
+            text-align: center;
+            position: relative;
+        }
+
+        .loader-logo {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #E5C1C5;
+            border-radius: 50%;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: loaderCircle 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .loader-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #1A1A1A;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: loaderText 2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        .loader-progress {
+            position: relative;
+            width: 200px;
+            height: 2px;
+            background-color: rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .loader-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #E5C1C5;
+            animation: loaderBar 2.5s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+        }
+
+        .loader-caption {
+            margin-top: 20px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #777777;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: loaderCaption 2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+        }
+
+        @keyframes loaderCircle {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes loaderText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes loaderBar {
+            0% { width: 0; }
+            60% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes loaderCaption {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <div class="loader-circle"></div>
+                <div class="loader-text">SM</div>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-caption">Studio Míša</div>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Studio Mísha</a>
+
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Úvod</a></li>
+                        <li class="nav-item"><a href="o-nas.html" class="nav-link">O nás</a></li>
+                        <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
+                        <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
+                        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
+                    </ul>
+                    <a href="tel:+420739990333" class="btn hide-on-mobile" style="margin-left: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Úvod</a></li>
+            <li class="mobile-nav-item"><a href="o-nas.html" class="mobile-nav-link">O nás</a></li>
+            <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
+            <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
+            <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
+            <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
+        </ul>
+
+        <div class="mobile-contact">
+            <a href="tel:+420739990333" class="btn" style="width: 100%; text-align: center; margin-bottom: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
+            <h4 class="mobile-contact-title">Kontaktujte nás</h4>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="mobile-contact-text">Branická 573/11, Praha 4 - Braník</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="mobile-contact-text">+420 739 990 333</div>
+            </div>
+            <div class="mobile-contact-item">
+                <div class="mobile-contact-icon"><i class="fas fa-envelope"></i></div>
+                <div class="mobile-contact-text">studiomisha@gmail.com</div>
+            </div>
+
+            <div class="mobile-social">
+                <a href="https://www.facebook.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/studiomishabranik/" target="_blank" class="mobile-social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content fade-in">
+                <div class="page-subtitle">Máte dotazy?</div>
+                <h1 class="page-title">Často kladené otázky</h1>
+                <p class="page-description">Připravili jsme pro vás odpovědi na nejčastější dotazy týkající se našich služeb, objednávání a péče.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <!-- Objednávání -->
+                <div class="faq-category fade-in-left">
+                    <div class="category-header">
+                        <h2 class="category-title">Objednávání a rezervace</h2>
+                        <p class="category-description">Vše co potřebujete vědět o objednávání našich služeb</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jak se mohu objednat na službu?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Objednat se můžete několika způsoby:
+                                <ul>
+                                    <li>Telefonicky na čísle +420 739 990 333</li>
+                                    <li>Emailem na studiomisha@gmail.com</li>
+                                    <li>Osobně přímo v našem studiu</li>
+                                    <li>Přes Facebook messenger</li>
+                                </ul>
+                                Doporučujeme objednávat se předem, zejména na víkendy a odpolední hodiny, které bývají nejvíce vytížené.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jak dlouho předem je třeba se objednat?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ideální je objednat se alespoň 2-3 dny předem. V případě volné kapacity je možné objednání i na stejný den. Pro konkrétní služby jako je laminace řas nebo obočí doporučujeme objednat se týden dopředu.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Mohu zrušit nebo přesunout termín?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, v případě potřeby můžete termín zrušit nebo přesunout. Prosíme vás však o oznámení alespoň 24 hodin předem, abychom mohli termín nabídnout jiným klientům. Zrušení můžete provést telefonicky nebo emailem.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Máte otevřeno o víkendech?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ne, o víkendech (sobota a neděle) máme zavřeno. Jsme otevřeni pondělí až čtvrtek od 9:00 do 19:00 a v pátek od 9:00 do 16:00.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Služby -->
+                <div class="faq-category fade-in-right">
+                    <div class="category-header">
+                        <h2 class="category-title">Služby a ošetření</h2>
+                        <p class="category-description">Informace o našich kosmetických službách</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jak dlouho trvá kosmetické ošetření?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Délka ošetření závisí na typu služby. Kompletní kosmetické ošetření pleti trvá přibližně 75 minut. Hloubkové čištění pleti 45-60 minut. Přesnou dobu najdete u každé služby v našem ceníku.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jaké produkty používáte?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Pracujeme výhradně s prémiovými kosmetickými značkami:
+                                <ul>
+                                    <li>Rosa Graf - německá prémiová kosmetika</li>
+                                    <li>BIO Kúr - bio kosmetika s přírodními aktivními složkami</li>
+                                    <li>Gisele Delorme - luxusní francouzská kosmetika</li>
+                                    <li>Aminta Med - dermatologická kosmetika s mikrostříbrem</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jak často bych měla chodit na kosmetiku?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Pro udržení zdravé a krásné pleti doporučujeme pravidelné návštěvy každé 4-6 týdnů. Při problematické pleti může být potřeba častější intervence. Vždy vám individuálně poradíme optimální frekvenci návštěv podle vašeho typu pleti.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jak dlouho vydrží laminace řas/obočí?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Laminace řas (lashlifting) vydrží 6-8 týdnů v závislosti na rychlosti růstu vašich řas. Laminace obočí vydrží přibližně 5-7 týdnů. Po této době lze ošetření opakovat.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jaký je rozdíl mezi gellakem a gelem?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Gellak je tenčí vrstva, která zpevní přírodní nehet a vydrží 2-3 týdny. Gel je tlustší vrstva, která nehet více zpevní a chrání, vydrží 3-4 týdny. Gel je vhodný pro slabší a lámavé nehty.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platba a ceny -->
+                <div class="faq-category fade-in-left">
+                    <div class="category-header">
+                        <h2 class="category-title">Platba a ceny</h2>
+                        <p class="category-description">Informace o cenách a způsobech platby</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jaké způsoby platby přijímáte?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Přijímáme hotovost i platební karty (Visa, Mastercard). Platba se provádí vždy až po poskytnutí služby.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jsou ceny v ceníku konečné?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, všechny ceny uvedené v ceníku jsou konečné a zahrnují veškerý použitý materiál a produkty. Neúčtujeme žádné skryté poplatky.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Nabízíte dárkové poukazy?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, nabízíme dárkové poukazy na všechny naše služby. Můžete si zakoupit poukaz na konkrétní službu nebo na vybranou částku. Dárkové poukazy jsou skvělým dárkem pro vaše blízké.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Máte věrnostní program nebo slevy?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, pro naše stálé klientky máme speciální nabídky a akce. Sledujte naše sociální sítě nebo se zeptejte přímo v salonu na aktuální akce a věrnostní benefity.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Příprava a péče -->
+                <div class="faq-category fade-in-right">
+                    <div class="category-header">
+                        <h2 class="category-title">Příprava a následná péče</h2>
+                        <p class="category-description">Jak se připravit na návštěvu a péče po ošetření</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Jak se mám připravit na kosmetické ošetření?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Na kosmetické ošetření přijďte bez make-upu, nebo můžete přijít nalíčené - make-up odstraníme v rámci ošetření. Pokud máte citlivou pokožku nebo užíváte nějaké léky, informujte o tom kosmetičku. Den před ošetřením se vyhněte nadměrné sluneční expozici.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Co dělat po laminaci řas?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Po laminaci řas je důležité:
+                                <ul>
+                                    <li>Prvních 24 hodin nesmočit řasy vodou</li>
+                                    <li>Nepoužívat make-up na oči první den</li>
+                                    <li>Nespat na břiše (netlačit obličejem do polštáře)</li>
+                                    <li>Pravidelně používat výživné sérum na řasy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Mohu po pedikúře chodit na bazén?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, po pedikúře můžete normálně chodit na bazén. Pokud máte aplikovaný gellak, doporučujeme počkat alespoň 2 hodiny po aplikaci před kontaktem s vodou, aby gellak lépe ztvrdl.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Mohu po masáži sportovat?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Po relaxační masáži doporučujeme den odpočinku bez náročného sportu. Po sportovní masáži můžete začít s lehkým tréninkem již následující den. Vždy záleží na typu masáže a vašich individuálních potřebách.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ostatní -->
+                <div class="faq-category fade-in-left">
+                    <div class="category-header">
+                        <h2 class="category-title">Ostatní dotazy</h2>
+                        <p class="category-description">Další užitečné informace</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Kde najdu vaše studio?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Naše studio se nachází na adrese Branická 573/11, Praha 4 - Braník. Jsme snadno dostupní autobusem (linky 118, 170, 196, 197) nebo tramvají (linky 2, 3, 17, 21) - zastávka Přístaviště.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Je možné parkování u studia?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, v okolí studia je možné parkování na ulici. V lokalitě jsou převážně modré zóny, kde je parkování zpoplatněno. Doporučujeme dorazit s malým předstihem pro hledání parkovacího místa.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Mohu k vám přijít s dítětem?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Rozumíme tomu, že ne vždy je možné zajistit hlídání. Pokud potřebujete přijít s dítětem, dejte nám prosím předem vědět, abychom vám mohli zajistit klidný čas pro ošetření.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="question-text">Nabízíte také produkty na prodej?</span>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="answer-content">
+                                Ano, v našem studiu si můžete zakoupit kosmetické produkty, které používáme při ošetření. Máme také e-shop na www.studiomisha-eshop.cz, kde najdete široký výběr kosmetiky pro domácí péči.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="quick-contact-content">
+                <h2 class="section-title">Nenašli jste odpověď?</h2>
+                <p class="section-description">Neváhejte nás kontaktovat, rádi zodpovíme všechny vaše dotazy.</p>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+420739990333">+420 739 990 333</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:studiomisha@gmail.com">studiomisha@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-copyright">
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Domů</a>
+                    <a href="o-nas.html" class="footer-link">O nás</a>
+                    <a href="sluzby.html" class="footer-link">Služby</a>
+                    <a href="cenik.html" class="footer-link">Ceník</a>
+                    <a href="kontakt.html" class="footer-link">Kontakt</a>
+                    <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-decoration"></div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        const closeMenu = () => {
+            mobileToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        mobileMenuClose.addEventListener('click', closeMenu);
+        mobileMenuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeLeftElements = document.querySelectorAll('.fade-in-left');
+        const fadeRightElements = document.querySelectorAll('.fade-in-right');
+
+        fadeElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeLeftElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        fadeRightElements.forEach(el => {
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleClass: 'active',
+                once: true
+            });
+        });
+
+        // Functional loader - waits for page to load with minimum display time
+        const loader = document.querySelector('.loader');
+        const minLoadTime = 1500; // Minimum time to show loader (ms)
+        const startTime = Date.now();
+
+        window.addEventListener('load', () => {
+            const elapsedTime = Date.now() - startTime;
+            const remainingTime = Math.max(0, minLoadTime - elapsedTime);
+
+            setTimeout(() => {
+                loader.classList.add('loaded');
+                // Hide loader completely after animation
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, remainingTime);
+        });
+    </script>
+</body>
+</html>
