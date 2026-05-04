@@ -237,7 +237,8 @@
         
         .hero-content {
             width: 50%;
-            z-index: 1;
+            z-index: 2;
+            position: relative;
         }
         
         .hero-subtitle {
@@ -920,14 +921,41 @@
         }
         
         /* Footer */
-        .footer {
-            background-color: var(--secondary);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 40px 0;
+                .footer {
+            background-color: #FFFFFF;
+            color: var(--text-light);
+            padding: 48px 0 32px;
             position: relative;
             overflow-x: hidden;
+            border-top: 1px solid rgba(229, 193, 197, 0.5);
         }
         
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+            margin-bottom: 24px;
+        }
+
+        .footer-brand .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: var(--text-light);
+            max-width: 220px;
+            line-height: 1.6;
+        }
+
         .footer-inner {
             display: flex;
             justify-content: space-between;
@@ -935,32 +963,28 @@
         }
         
         .footer-copyright {
-            font-size: 14px;
+            font-size: 13px;
+            color: var(--text-light);
         }
         
         .footer-links {
             display: flex;
-            gap: 30px;
+            gap: 28px;
+            flex-wrap: wrap;
         }
         
         .footer-link {
-            font-size: 14px;
+            font-size: 13px;
+            color: var(--text-light);
             transition: color 0.3s ease;
         }
         
         .footer-link:hover {
-            color: white;
+            color: var(--primary-dark);
         }
         
         .footer-decoration {
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 193, 176, 0.05) 0%, rgba(212, 193, 176, 0) 70%);
-            pointer-events: none;
+            display: none;
         }
         
         /* Mobile Menu */
@@ -1314,19 +1338,19 @@
                 padding: 0 40px;
                 text-align: center;
             }
-            
+
             .hero-title {
                 font-size: 50px;
             }
-            
+
             .hero-description {
                 margin: 0 auto 40px;
             }
-            
+
             .hero-buttons {
                 justify-content: center;
             }
-            
+
             .hero-img {
                 opacity: 0.2;
                 width: 100%;
@@ -1381,6 +1405,14 @@
             .hero-buttons .btn {
                 font-size: 12px;
                 padding: 12px 20px;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .cursor-container {
+                display: none !important;
             }
 
             .section-title {
@@ -1552,6 +1584,159 @@
             transform: translateY(0);
         }
     }
+        /* Reviews Section */
+        .reviews {
+            padding: 100px 0;
+            background: #fff;
+        }
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .reviews-header .section-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        .reviews-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--secondary);
+            margin-bottom: 24px;
+        }
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8f4f5;
+            border: 1px solid rgba(229, 193, 197, 0.5);
+            border-radius: 50px;
+            padding: 12px 24px;
+            margin-bottom: 16px;
+        }
+        .google-badge-logo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4285F4;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .google-badge-logo span:nth-child(2) { color: #DB4437; }
+        .google-badge-logo span:nth-child(3) { color: #F4B400; }
+        .google-badge-logo span:nth-child(4) { color: #4285F4; }
+        .google-badge-logo span:nth-child(5) { color: #0F9D58; }
+        .google-badge-logo span:nth-child(6) { color: #DB4437; }
+        .google-badge-logo span:nth-child(7) { color: #4285F4; }
+        .google-badge-score {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .google-badge-score .score-num {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .google-badge-score .stars {
+            display: flex;
+            gap: 2px;
+            color: #FBBC04;
+            font-size: 1rem;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .review-card {
+            background: #f8f4f5;
+            border: 1px solid rgba(229, 193, 197, 0.4);
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(229, 193, 197, 0.35);
+        }
+        .review-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .review-author {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--secondary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        .review-date {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 2px;
+        }
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            color: #FBBC04;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .reviews-cta {
+            text-align: center;
+        }
+        .reviews-cta .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            color: var(--secondary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .reviews-cta .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1589,6 +1774,7 @@
                         <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
                         <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
                         <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="garelie.html" class="nav-link">Galerie</a></li>
                         <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
                     </ul>
                     <a href="tel:+420739990333" class="btn hide-on-mobile" style="margin-left: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
@@ -1615,6 +1801,7 @@
             <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
             <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
             <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
+            <li class="mobile-nav-item"><a href="garelie.html" class="mobile-nav-link">Galerie</a></li>
             <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
         </ul>
         
@@ -1682,7 +1869,7 @@
                     </div>
                     
                     <div class="about-image fade-in-right">
-                        <img src="/photos/exterior.jpg" alt="Studio Mísha">
+                        <img src="photos/_DSF4626.jpg" alt="Studio Mísha">
                         <div class="image-accent"></div>
                     </div>
                 </div>
@@ -2217,6 +2404,66 @@
             </div>
         </section>
         
+        <!-- Reviews Section -->
+        <section class="reviews">
+            <div class="container">
+                <div class="reviews-header fade-in">
+                    <span class="section-tag">Recenze</span>
+                    <h2>Co říkají naše klientky</h2>
+                    <div class="google-badge">
+                        <span class="google-badge-logo">
+                            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+                        </span>
+                        <div class="google-badge-score">
+                            <span class="score-num">4,8</span>
+                            <span class="stars">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card fade-in">
+                        <div class="review-top">
+                            <div class="review-avatar">M</div>
+                            <div>
+                                <div class="review-author">Marketa Veverkova</div>
+                                <div class="review-date">před 4 lety</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Velmi příjemná paní kosmetička. Naprostá spokojenost. Rada, jak pečovat a doporučení dalších vychytávek. Příjemné prostředí, skvělá cena. Opravdu spokojenost.</p>
+                    </div>
+                    <div class="review-card fade-in">
+                        <div class="review-top">
+                            <div class="review-avatar">N</div>
+                            <div>
+                                <div class="review-author">Nikuska Micunkovita</div>
+                                <div class="review-date">před 4 měsíci</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Navštívila jsem tohle studio a musím říct, že jsem moc spokojená. Hezký prostředí a moc milá a srdečná obsluha. Slečna Katka mi udělala skvělou pedikúru a jsem vážně nadšená. Doporučuji!</p>
+                    </div>
+                    <div class="review-card fade-in">
+                        <div class="review-top">
+                            <div class="review-avatar">G</div>
+                            <div>
+                                <div class="review-author">Gabriela Motyčková Dobošová</div>
+                                <div class="review-date">před 5 lety</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">Pořád velmi příjemný zážitek. Manikúra vydržela devět dnů 😊</p>
+                    </div>
+                </div>
+                <div class="reviews-cta">
+                    <a href="https://g.page/r/studiomisha/review" target="_blank" rel="noopener" class="btn-outline">
+                        <span>Napište nám recenzi</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
@@ -2337,23 +2584,27 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-inner">
-                <div class="footer-copyright">
-                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena.  Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Studio Mísha</a>
+                    <p>Kosmetika, masáže, manikúra a pedikúra v Praze 4 Braníku.</p>
                 </div>
-                
                 <div class="footer-links">
-                    <a href="#" class="footer-link">Domů</a>
+                    <a href="index.html" class="footer-link">Úvod</a>
                     <a href="o-nas.html" class="footer-link">O nás</a>
                     <a href="sluzby.html" class="footer-link">Služby</a>
-                    <a href="#team" class="footer-link">Náš tým</a>
                     <a href="cenik.html" class="footer-link">Ceník</a>
+                    <a href="garelie.html" class="footer-link">Galerie</a>
                     <a href="kontakt.html" class="footer-link">Kontakt</a>
                     <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
                 </div>
             </div>
+            <div class="footer-inner">
+                <div class="footer-copyright">
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena.
+                </div>
+            </div>
         </div>
-        
         <div class="footer-decoration"></div>
     </footer>
     

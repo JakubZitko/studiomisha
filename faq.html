@@ -412,12 +412,39 @@
         }
 
         /* Footer */
-        .footer {
-            background-color: var(--secondary);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 40px 0;
+                .footer {
+            background-color: #FFFFFF;
+            color: var(--text-light);
+            padding: 48px 0 32px;
             position: relative;
             overflow-x: hidden;
+            border-top: 1px solid rgba(229, 193, 197, 0.5);
+        }
+        
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+            margin-bottom: 24px;
+        }
+
+        .footer-brand .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            color: var(--text-light);
+            max-width: 220px;
+            line-height: 1.6;
         }
 
         .footer-inner {
@@ -425,34 +452,30 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .footer-copyright {
-            font-size: 14px;
+            font-size: 13px;
+            color: var(--text-light);
         }
-
+        
         .footer-links {
             display: flex;
-            gap: 30px;
+            gap: 28px;
+            flex-wrap: wrap;
         }
-
+        
         .footer-link {
-            font-size: 14px;
+            font-size: 13px;
+            color: var(--text-light);
             transition: color 0.3s ease;
         }
-
+        
         .footer-link:hover {
-            color: white;
+            color: var(--primary-dark);
         }
-
+        
         .footer-decoration {
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 193, 176, 0.05) 0%, rgba(212, 193, 176, 0) 70%);
-            pointer-events: none;
+            display: none;
         }
 
         /* Animation Classes */
@@ -839,6 +862,7 @@
                         <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
                         <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
                         <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="garelie.html" class="nav-link">Galerie</a></li>
                         <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
                     </ul>
                     <a href="tel:+420739990333" class="btn hide-on-mobile" style="margin-left: 20px;"><i class="fas fa-phone-alt"></i> +420 739 990 333</a>
@@ -865,6 +889,7 @@
             <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
             <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
             <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
+            <li class="mobile-nav-item"><a href="garelie.html" class="mobile-nav-link">Galerie</a></li>
             <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
         </ul>
 
@@ -1287,18 +1312,24 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-inner">
-                <div class="footer-copyright">
-                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. | Web vytvořil <a href="https://jakubzitko.cz" target="_blank" style="color: var(--primary); text-decoration: none;">jakubzitko.cz</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">Studio Mísha</a>
+                    <p>Kosmetika, masáže, manikúra a pedikúra v Praze 4 Braníku.</p>
                 </div>
-
                 <div class="footer-links">
-                    <a href="index.html" class="footer-link">Domů</a>
+                    <a href="index.html" class="footer-link">Úvod</a>
                     <a href="o-nas.html" class="footer-link">O nás</a>
                     <a href="sluzby.html" class="footer-link">Služby</a>
                     <a href="cenik.html" class="footer-link">Ceník</a>
+                    <a href="garelie.html" class="footer-link">Galerie</a>
                     <a href="kontakt.html" class="footer-link">Kontakt</a>
                     <a href="http://www.studiomisha-eshop.cz/" target="_blank" class="footer-link">E-shop</a>
+                </div>
+            </div>
+            <div class="footer-inner">
+                <div class="footer-copyright">
+                    &copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena. |
                 </div>
             </div>
         </div>
