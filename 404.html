@@ -93,9 +93,13 @@
             padding: 25px 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .header-inner {
@@ -493,15 +497,28 @@
                 font-size: 26px;
             }
 
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 24px;
+                padding-bottom: 24px;
+            }
+
+            .footer-brand p {
+                max-width: none;
+            }
+
             .footer-inner {
                 flex-direction: column;
-                gap: 20px;
+                gap: 16px;
                 text-align: center;
             }
 
             .footer-links {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 12px 20px;
             }
         }
     </style>
@@ -519,6 +536,7 @@
                         <li class="nav-item"><a href="o-nas.html" class="nav-link">O nás</a></li>
                         <li class="nav-item"><a href="sluzby.html" class="nav-link">Služby</a></li>
                         <li class="nav-item"><a href="cenik.html" class="nav-link">Ceník</a></li>
+                        <li class="nav-item"><a href="garelie.html" class="nav-link">Galerie</a></li>
                         <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
                         <li class="nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="nav-link">E-shop</a></li>
                     </ul>
@@ -544,6 +562,7 @@
             <li class="mobile-nav-item"><a href="o-nas.html" class="mobile-nav-link">O nás</a></li>
             <li class="mobile-nav-item"><a href="sluzby.html" class="mobile-nav-link">Služby</a></li>
             <li class="mobile-nav-item"><a href="cenik.html" class="mobile-nav-link">Ceník</a></li>
+            <li class="mobile-nav-item"><a href="garelie.html" class="mobile-nav-link">Galerie</a></li>
             <li class="mobile-nav-item"><a href="kontakt.html" class="mobile-nav-link">Kontakt</a></li>
             <li class="mobile-nav-item"><a href="http://www.studiomisha-eshop.cz/" target="_blank" class="mobile-nav-link">E-shop</a></li>
         </ul>
@@ -613,6 +632,11 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
 
         const toggle = document.getElementById('mobileToggle');
         const menu = document.getElementById('mobileMenu');

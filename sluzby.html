@@ -115,11 +115,16 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            padding: 25px 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
             transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .header-inner {
@@ -769,16 +774,28 @@
                 grid-template-columns: 1fr;
             }
 
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 24px;
+                padding-bottom: 24px;
+            }
+
+            .footer-brand p {
+                max-width: none;
+            }
+
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
-                gap: 20px;
+                gap: 16px;
             }
 
             .footer-links {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+                gap: 12px 20px;
             }
 
             .footer-link {
@@ -1136,6 +1153,11 @@
                 link.addEventListener('click', closeMenu);
             });
         }
+
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
 
         // GSAP Scroll Animations
         gsap.registerPlugin(ScrollTrigger);
