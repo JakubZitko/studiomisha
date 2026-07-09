@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png">
+  <title>Jak se k nám dostat | Studio Mísha - Braník, Praha 4</title>
+  <meta name="description" content="Jak se dostat do Studio Mísha v Braníku. Mapa, Google Maps, Apple Maps, MHD Přístaviště — bus a tramvaj.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://studiomisha.cz/jak-se-k-nam-dostat.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studiomisha.cz/jak-se-k-nam-dostat.html">
+  <meta property="og:title" content="Jak se k nám dostat | Studio Mísha">
+  <meta property="og:description" content="Mapa, navigace a MHD do Studio Mísha, Branická 573/11, Praha 4.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/JakubZitko/studiomisha/main/photos/_DSF4626.jpg">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="Studio Mísha">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  
+<style>
+.dir-grid{display:grid;gap:1.25rem}
+@media(min-width:900px){.dir-grid{grid-template-columns:1fr 1.05fr;align-items:start}}
+.nav-apps{display:grid;gap:.65rem;margin-top:1.25rem}
+@media(min-width:520px){.nav-apps{grid-template-columns:1fr 1fr}}
+.nav-app{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1rem 1.1rem;border-radius:1.15rem;
+  background:rgba(28,20,18,.03);border:1px solid var(--hairline);
+  transition:background .45s var(--ease),transform .45s var(--ease),border-color .45s var(--ease);
+}
+.nav-app:hover{background:rgba(28,20,18,.05);border-color:var(--hairline-strong);transform:translateY(-2px)}
+.nav-app strong{display:block;font-size:.95rem;color:var(--espresso);margin-bottom:.15rem}
+.nav-app span{font-size:.78rem;color:var(--muted)}
+.nav-app .nav-app-ico{
+  width:2.4rem;height:2.4rem;border-radius:999px;flex-shrink:0;
+  display:grid;place-items:center;background:var(--espresso);color:var(--cream);
+}
+.nav-app .nav-app-ico svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5}
+.transit-grid{display:grid;gap:1rem;margin-top:1rem}
+@media(min-width:640px){.transit-grid{grid-template-columns:1fr 1fr}}
+.transit-card .bezel-core{padding:1.35rem 1.4rem;background:#fff;height:100%}
+.transit-card h3{margin:.35rem 0 .65rem}
+.transit-card p{color:var(--muted);font-size:.9rem;line-height:1.65}
+.transit-lines{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.85rem}
+.line-pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:2rem;padding:.3rem .55rem;border-radius:999px;
+  font-size:.72rem;font-weight:600;letter-spacing:.04em;
+  background:var(--blush);color:var(--espresso);
+}
+.line-pill.tram{background:rgba(28,20,18,.08)}
+.walk-note{
+  margin-top:1rem;padding:1rem 1.15rem;border-radius:1.15rem;
+  background:rgba(201,163,168,.12);border:1px solid rgba(201,163,168,.25);
+  font-size:.88rem;color:var(--espresso-soft);line-height:1.55;
+}
+.map-page .bezel-core{min-height:360px}
+.map-page iframe{width:100%;height:100%;min-height:360px;border:0;filter:grayscale(.2) contrast(1.02)}
+@media(min-width:900px){.map-page .bezel-core,.map-page iframe{min-height:520px}}
+</style>
+
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="nav-shell">
+    <div class="nav-island" id="navIsland">
+      <a href="index.html" class="nav-logo">Studio Mísha</a>
+      <nav class="nav-links" aria-label="Hlavní navigace">
+        <a href="index.html" class="">Úvod</a>
+        <a href="o-nas.html" class="">O nás</a>
+        <a href="sluzby.html" class="">Služby</a>
+        <a href="cenik.html" class="">Ceník</a>
+        <a href="garelie.html" class="">Galerie</a>
+        <a href="jak-se-k-nam-dostat.html" class="is-active">Jak se k nám dostat</a>
+        <a href="kontakt.html" class="">Kontakt</a>
+        <a href="http://www.studiomisha-eshop.cz/" class="" target="_blank" rel="noopener">E-shop</a>
+      </nav>
+      <a href="tel:+420739990333" class="nav-cta"><span class="call-label-short">Objednat se</span><span class="call-label-num">+420 739 990 333</span></a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" type="button"><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="menu-overlay" id="menuOverlay">
+    <nav>
+      <a href="index.html">Úvod</a>
+      <a href="o-nas.html">O nás</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="cenik.html">Ceník</a>
+      <a href="garelie.html">Galerie</a>
+      <a href="jak-se-k-nam-dostat.html">Jak se k nám dostat</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="http://www.studiomisha-eshop.cz/" target="_blank" rel="noopener">E-shop</a>
+    </nav>
+    <div class="menu-meta"><p>Branická 573/11, Praha 4</p><p><a href="tel:+420739990333">+420 739 990 333</a></p></div>
+  </div>
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow reveal">Doprava</div>
+        <h1 class="display reveal reveal-d1">Jak se k nám dostat</h1>
+        <p class="lede reveal reveal-d2">Branická 573/11, Praha 4 – Braník. Jednoduše autem, MHD nebo pěšky od zastávky Přístaviště.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container dir-grid">
+        <div class="reveal">
+          <div class="bezel contact-panel">
+            <div class="bezel-core">
+              <div class="eyebrow">Adresa</div>
+              <h2 class="display" style="margin:1rem 0 .5rem">Studio Mísha</h2>
+              <p style="color:var(--muted);line-height:1.7;margin-bottom:1rem">
+                Branická 573/11<br>
+                147 00 Praha 4 – Braník
+              </p>
+              <div class="contact-list" style="margin-bottom:0">
+                <div class="contact-row">
+                  <div class="contact-ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+                  <div>
+                    <strong>Kde nás najdete</strong>
+                    <span style="color:var(--muted);font-size:.9rem">Nedaleko Vltavy, u zastávky Přístaviště</span>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="display" style="font-size:1.35rem;margin:1.75rem 0 .35rem">Navigace</h3>
+              <p style="color:var(--muted);font-size:.9rem;margin-bottom:.25rem">Klepněte a otevře se mapa s cílem Studio Mísha.</p>
+              <div class="nav-apps">
+                <a class="nav-app" href="https://www.google.com/maps/dir/?api=1&destination=Branick%C3%A1%20573%2F11%2C%20Praha%204%20Bran%C3%ADk" target="_blank" rel="noopener">
+                  <div>
+                    <strong>Google Maps</strong>
+                    <span>Trasa navigací</span>
+                  </div>
+                  <span class="nav-app-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span>
+                </a>
+                <a class="nav-app" href="https://maps.apple.com/?daddr=Branick%C3%A1%20573%2F11%2C%20Praha%204%20Bran%C3%ADk&dirflg=d" target="_blank" rel="noopener">
+                  <div>
+                    <strong>Apple Maps</strong>
+                    <span>Pro iPhone a Mac</span>
+                  </div>
+                  <span class="nav-app-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span>
+                </a>
+                <a class="nav-app" href="https://mapy.cz/zakladni?q=Studio%20M%C3%ADsha%20Branick%C3%A1%20573" target="_blank" rel="noopener">
+                  <div>
+                    <strong>Mapy.cz</strong>
+                    <span>Česká mapa</span>
+                  </div>
+                  <span class="nav-app-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span>
+                </a>
+                <a class="nav-app" href="https://waze.com/ul?q=Branick%C3%A1%20573%2F11%2C%20Praha%204%20Bran%C3%ADk&navigate=yes" target="_blank" rel="noopener">
+                  <div>
+                    <strong>Waze</strong>
+                    <span>Navigace autem</span>
+                  </div>
+                  <span class="nav-app-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span>
+                </a>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.25rem">
+                <a href="https://www.google.com/maps/search/?api=1&query=Studio+M%C3%ADsha%2CBranick%C3%A1%20573%2F11%2C%20Praha%204%20Bran%C3%ADk" target="_blank" rel="noopener" class="btn-ghost">Zobrazit místo <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span></a>
+                <a href="tel:+420739990333" class="btn-island"><span class="call-label-short">Zavolat</span><span class="call-label-num">+420 739 990 333</span> <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bezel map-shell map-page reveal reveal-d1">
+          <div class="bezel-core">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.4793752648884!2d14.408000877007979!3d50.03985061684231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b951eeda42f87%3A0xfbf3b33f08bd942e!2sStudio%20M%C3%ADsha!5e0!3m2!1scs!2scz!4v1759940002840!5m2!1scs!2scz" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Studio Mísha"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow reveal">MHD</div>
+          <h2 class="display reveal reveal-d1">Městskou hromadnou dopravou</h2>
+          <p class="lede reveal reveal-d2">Nejpohodlnější je vystoupit na zastávce <strong style="color:var(--espresso);font-weight:600">Přístaviště</strong> a dojít pěšky.</p>
+        </div>
+        <div class="transit-grid">
+          <article class="bezel transit-card reveal">
+            <div class="bezel-core">
+              <div class="eyebrow">Autobus</div>
+              <h3 class="display">Bus k Přístavišti</h3>
+              <p>Zastávka <strong>Přístaviště</strong> — spoje v okolí Braníka a Prahy 4.</p>
+              <div class="transit-lines">
+                <span class="line-pill">118</span>
+                <span class="line-pill">170</span>
+                <span class="line-pill">196</span>
+                <span class="line-pill">197</span>
+              </div>
+            </div>
+          </article>
+          <article class="bezel transit-card reveal reveal-d1">
+            <div class="bezel-core">
+              <div class="eyebrow">Tramvaj</div>
+              <h3 class="display">Tram k Přístavišti</h3>
+              <p>Tramvajové linky na zastávku <strong>Přístaviště</strong> — pak krátká chůze ke studiu.</p>
+              <div class="transit-lines">
+                <span class="line-pill tram">2</span>
+                <span class="line-pill tram">3</span>
+                <span class="line-pill tram">17</span>
+                <span class="line-pill tram">21</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="walk-note reveal reveal-d2">
+          <strong>Pěšky od zastávky:</strong> Z Přístaviště je to kousek po Branické směrem ke studiu (Branická 573/11). Pokud si nejste jistí, zavolejte na +420 739 990 333 — rádi vás navedeme.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="bezel reveal">
+          <div class="bezel-core" style="padding:clamp(1.5rem,3vw,2.25rem);background:#fff;display:grid;gap:1.25rem;align-items:center">
+            <div>
+              <div class="eyebrow">Parkování</div>
+              <h2 class="display" style="margin:.5rem 0">Autem</h2>
+              <p style="color:var(--muted);max-width:48ch;line-height:1.7">V okolí Branické je parkování v ulicích (dle aktuálního značení a zón). Doporučujeme navigaci spustit předem a v případě potřeby zavolat.</p>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:.65rem">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Branick%C3%A1%20573%2F11%2C%20Praha%204%20Bran%C3%ADk" target="_blank" rel="noopener" class="btn-island">Navigovat (Google) <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
+              <a href="https://maps.apple.com/?daddr=Branick%C3%A1%20573%2F11%2C%20Praha%204%20Bran%C3%ADk&dirflg=d" target="_blank" rel="noopener" class="btn-ghost">Navigovat (Apple) <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-band">
+      <div class="container">
+        <div class="bezel reveal">
+          <div class="bezel-core">
+            <div>
+              <div class="eyebrow" style="background:rgba(253,251,247,.08);border-color:rgba(253,251,247,.12);color:rgba(253,251,247,.75)">Těšíme se</div>
+              <h2 class="display">Už víte, kudy k nám?</h2>
+              <p>Objednejte se telefonicky — rádi vám potvrdíme termín.</p>
+            </div>
+            <a href="tel:+420739990333" class="btn-island"><span class="call-label-short">Zavolat a objednat</span><span class="call-label-num">+420 739 990 333</span> <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">Studio Mísha</a>
+          <p>Kosmetika, masáže, manikúra a pedikúra v Praze 4 Braníku.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Úvod</a>
+          <a href="o-nas.html">O nás</a>
+          <a href="sluzby.html">Služby</a>
+          <a href="cenik.html">Ceník</a>
+          <a href="garelie.html">Galerie</a>
+          <a href="jak-se-k-nam-dostat.html">Jak se k nám dostat</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a href="faq.html">FAQ</a>
+          <a href="http://www.studiomisha-eshop.cz/" target="_blank" rel="noopener">E-shop</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Studio Mísha. Všechna práva vyhrazena.</span>
+        <span>Praha 4 · Braník</span>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-book" id="mobileBook" role="region" aria-label="Rychlá rezervace">
+    <div class="mobile-book-copy">
+      <strong>Rezervovat termín</strong>
+      <span id="mobileBookHours">+420 739 990 333</span>
+    </div>
+    <a href="tel:+420739990333" class="mobile-book-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <span class="call-label-short">Zavolat</span><span class="call-label-num">+420 739 990 333</span></a>
+  </div>
+  <script src="assets/site.js"></script>
+</body>
+</html>
