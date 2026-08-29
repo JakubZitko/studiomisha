@@ -32,6 +32,30 @@
 .svc-card:not(.featured) .bezel-core{padding:.65rem;gap:1rem}
 .svc-card:not(.featured) .svc-media{border-radius:calc(var(--radius-core) - .25rem)}
 .svc-card:not(.featured) .svc-body{padding:.35rem .8rem .85rem}
+.svc-media-mobile{display:none}
+
+@media(max-width:767px){
+  .hero-visual{display:none}
+  .hero{padding-bottom:3rem}
+
+  .svc-card.featured .bezel-core{background:#fff;color:var(--ink);padding:.65rem;gap:1rem;justify-content:flex-start}
+  .svc-card.featured .svc-media-mobile{display:block;border-radius:calc(var(--radius-core) - .25rem)}
+  .svc-card.featured .svc-body{padding:.35rem .8rem .85rem;color:var(--ink)}
+  .svc-card.featured h3{color:var(--espresso)}
+  .svc-card.featured .svc-body p{color:var(--muted)}
+  .svc-card.featured .svc-link{color:var(--espresso);border-color:var(--hairline-strong)}
+  .svc-card.featured .svc-link span{background:rgba(28,20,18,.05)}
+
+  .team-card .bezel-core{display:grid;grid-template-columns:7.5rem minmax(0,1fr);align-items:start;gap:.85rem;padding:.55rem}
+  .team-photo{width:100%;aspect-ratio:4/5}
+  .team-meta{padding:.45rem .35rem .45rem 0}
+  .team-role{margin-bottom:.45rem}
+  .team-meta p{font-size:.8rem;line-height:1.55}
+}
+
+@media(max-width:380px){
+  .team-card .bezel-core{grid-template-columns:6.5rem minmax(0,1fr)}
+}
 
 /* Curated e-shop preview — designed for transparent product cutouts. */
 .shop-preview{background:radial-gradient(ellipse 55% 60% at 50% 52%,rgba(201,163,168,.14),transparent 68%),var(--paper);overflow:hidden}
@@ -161,10 +185,13 @@
         <div class="services-bento">
           <article class="bezel svc-card featured svc-a reveal">
             <div class="bezel-core">
+              <div class="svc-media svc-media-mobile">
+                <img src="photos/opt/hq/svc-skin-crisp.webp" alt="Kosmetické ošetření pleti" width="2400" height="1600" loading="lazy" decoding="async">
+              </div>
               <div class="svc-body">
                 <h3 class="display">Kosmetika</h3>
                 <p>Kompletní ošetření pleti s profesionálními produkty Rosa Graf, BIO Kúr a Gisele Delorme, masáž obličeje a dekoltu, čištění pleti a další.</p>
-                <a href="cenik.html" class="svc-link">Ceník <span><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
+                <a href="sluzby.html" class="svc-link">Služby <span><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
               </div>
             </div>
           </article>
@@ -176,7 +203,7 @@
               <div class="svc-body">
                 <h3 class="display">Masáže</h3>
                 <p>Hloubkové, aroma a sportovní masáže, masáž šíje, reflexní masáž chodidel a přístrojová lymfodrenáž.</p>
-                <a href="cenik.html" class="svc-link">Ceník <span><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
+                <a href="sluzby.html" class="svc-link">Služby <span><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
               </div>
             </div>
           </article>
@@ -188,7 +215,7 @@
               <div class="svc-body">
                 <h3 class="display">Manikúra &amp; pedikúra</h3>
                 <p>Kompletní péče o ruce a nohy, gellak, zpevnění nehtů, relaxační masáže a odborná ošetření.</p>
-                <a href="cenik.html" class="svc-link">Ceník <span><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
+                <a href="sluzby.html" class="svc-link">Služby <span><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></span></a>
               </div>
             </div>
           </article>
