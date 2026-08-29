@@ -77,7 +77,6 @@ h1.display{font-size:clamp(2.4rem,6vw,4.25rem)} h2.display{font-size:clamp(1.9re
   scrollbar-width:none;
 }
 .price-tabs::-webkit-scrollbar{display:none}
-.price-validity{margin:-1rem 0 1.5rem;color:var(--muted);font-size:.82rem}
 .price-tab{
   padding:.65rem 1.1rem;border-radius:999px;font-size:.78rem;font-weight:500;
   letter-spacing:.06em;color:var(--muted);white-space:nowrap;flex:0 0 auto;
@@ -353,20 +352,22 @@ h1.display{font-size:clamp(2.4rem,6vw,4.25rem)} h2.display{font-size:clamp(1.9re
 }
 .price-book{
   display:inline-flex;align-items:center;justify-content:center;
-  padding:.45rem .85rem;border-radius:999px;
-  background:var(--espresso);color:var(--cream);
-  font-size:.72rem;font-weight:500;letter-spacing:.05em;
-  white-space:nowrap;transition:transform .4s var(--ease),background .4s var(--ease);
+  min-height:2rem;padding:.3rem .62rem;border:1px solid var(--hairline-strong);border-radius:999px;
+  background:transparent;color:var(--muted);
+  font-size:.66rem;font-weight:500;letter-spacing:.04em;line-height:1;
+  white-space:nowrap;transition:transform .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease),color .4s var(--ease);
   text-decoration:none;
 }
-.price-book:hover{background:var(--espresso-soft)}
+.price-book:hover{background:rgba(28,20,18,.045);border-color:var(--espresso-soft);color:var(--espresso)}
 .price-book:active{transform:scale(.98)}
+.price-book .call-label-short{display:inline !important}
+.price-book .call-label-num{display:none !important}
 @media(max-width:700px){
   .price-item{grid-template-columns:1fr auto !important;gap:.4rem .75rem !important}
-  .price-book{grid-column:1 / -1;justify-self:start;margin-top:.25rem}
+  .price-book{grid-column:1 / -1;grid-row:3;justify-self:start;min-height:2.25rem;margin-top:.25rem;padding:.35rem .7rem}
   .price-duration{grid-column:1 !important;grid-row:2 !important}
-  .price-amount{grid-column:2 !important;grid-row:1 / span 2 !important;align-self:center !important}
-  .price-service{grid-column:1 / -1 !important}
+  .price-amount{grid-column:2 !important;grid-row:2 !important;align-self:center !important}
+  .price-service{grid-column:1 / -1 !important;grid-row:1 !important}
 }
 
 .cta-dual{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
