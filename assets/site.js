@@ -77,11 +77,10 @@
     });
   });
 
-  // Add Objednat to first N price items per visible category on load
+  // Add a direct booking action to every service in the price list
   document.querySelectorAll('.price-category, .price-table').forEach(cat=>{
-    cat.querySelectorAll('.price-item').forEach((item,i)=>{
+    cat.querySelectorAll('.price-item').forEach(item=>{
       if(item.querySelector('.price-book')) return;
-      if(i>=6) return; // top services only
       const name=item.querySelector('.price-name')?.textContent?.trim()||'službu';
       const a=document.createElement('a');
       a.className='price-book';
