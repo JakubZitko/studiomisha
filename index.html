@@ -47,20 +47,16 @@
 .home-price-copy span{display:block;margin-top:.3rem;font-size:.8rem;color:var(--muted)}
 .home-price-row>strong{font-family:Georgia,"Iowan Old Style",Palatino,"Times New Roman",serif;font-size:1.25rem;line-height:1.25;color:var(--espresso);white-space:nowrap}
 .home-price-actions{margin-top:2rem}
-.hero-scroll-cue{display:none}
+.hero-scroll-cue{position:absolute;left:50%;top:min(calc(100vh - 3.25rem),calc(100% - 3.25rem));top:min(calc(100svh - 3.25rem),calc(100% - 3.25rem));z-index:2;display:inline-flex;align-items:center;gap:.5rem;transform:translateX(-50%);font-size:.64rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--muted);transition:color .35s var(--ease)}
+.hero-scroll-cue svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .35s var(--ease)}
+.hero-scroll-cue:hover{color:var(--espresso)}
+.hero-scroll-cue:hover svg{transform:translateY(3px)}
 .menu-overlay.is-leaving{opacity:0!important;visibility:hidden;pointer-events:none!important;transition:none!important}
 .menu-overlay.is-leaving a,.menu-overlay.is-leaving .menu-meta{opacity:0!important;transition:none!important}
 .hero .reveal{opacity:1;transform:none;filter:none;transition:none}
 
 @media(min-width:800px){
   .home-price-preview{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-
-@media(min-width:960px){
-  .hero-scroll-cue{position:absolute;left:50%;top:calc(100dvh - 3.25rem);z-index:2;display:inline-flex;align-items:center;gap:.55rem;transform:translateX(-50%);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .35s var(--ease)}
-  .hero-scroll-cue svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .35s var(--ease)}
-  .hero-scroll-cue:hover{color:var(--espresso)}
-  .hero-scroll-cue:hover svg{transform:translateY(3px)}
 }
 
 @media(min-width:860px){
