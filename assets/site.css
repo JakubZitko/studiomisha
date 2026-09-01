@@ -56,6 +56,8 @@ h1.display{font-size:clamp(2.4rem,6vw,4.25rem)} h2.display{font-size:clamp(1.9re
 .nav-burger.is-open span:nth-child(1){transform:rotate(45deg)}.nav-burger.is-open span:nth-child(2){transform:rotate(-45deg)}
 .menu-overlay{position:fixed;inset:0;z-index:28;background:rgba(253,251,247,.92);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);display:flex;flex-direction:column;justify-content:center;padding:6rem 1.75rem 2rem;opacity:0;pointer-events:none;transition:opacity .55s var(--ease)}
 .menu-overlay.is-open{opacity:1;pointer-events:auto}
+.menu-overlay.is-leaving{opacity:0!important;visibility:hidden;pointer-events:none!important;transition:none!important}
+.menu-overlay.is-leaving a,.menu-overlay.is-leaving .menu-meta{opacity:0!important;transition:none!important}
 .menu-overlay nav{display:flex;flex-direction:column;gap:.25rem}
 .menu-overlay a{font-family:Georgia,Palatino,"Times New Roman",serif;font-size:clamp(2rem,8vw,3rem);font-weight:500;color:var(--espresso);opacity:0;transform:translateY(2rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}
 .menu-overlay.is-open a{opacity:1;transform:translateY(0)}
@@ -66,6 +68,7 @@ h1.display{font-size:clamp(2.4rem,6vw,4.25rem)} h2.display{font-size:clamp(1.9re
 .page-hero .eyebrow{margin-bottom:1.1rem}
 .page-hero h1{margin-bottom:1rem}
 .page-hero .lede{max-width:48ch}
+.page-hero .reveal{opacity:1;transform:none;filter:none;transition:none}
 .section{padding:clamp(4rem,8vw,7rem) 0}
 .section-head{display:flex;flex-direction:column;gap:1rem;margin-bottom:clamp(2rem,4vw,3.25rem);max-width:40rem}
 .section-head.center{text-align:center;align-items:center;margin-inline:auto}
@@ -102,6 +105,7 @@ h1.display{font-size:clamp(2.4rem,6vw,4.25rem)} h2.display{font-size:clamp(1.9re
     font-size:.74rem;
     letter-spacing:.04em;
   }
+  .price-tab:last-child{grid-column:1 / -1}
 }
 .price-table,.price-category{display:none}.price-table.active,.price-category.active{display:block}
 .price-item{display:grid;grid-template-columns:1fr auto auto;gap:1rem 1.5rem;align-items:start;padding:1.35rem 0;border-bottom:1px solid var(--hairline)}

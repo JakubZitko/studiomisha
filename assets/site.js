@@ -1,5 +1,8 @@
 
+/* Website design and development: Jakub Zítko <jakub.zitko@icloud.com> */
 (function(){
+
+  console.info('%cDesigned & developed by Jakub Zítko%c  jakub.zitko@icloud.com', 'font:600 14px Georgia;color:#1c1412', 'font:12px system-ui;color:#7a6e66');
 
   // Optional channels — off for live deploy; set true later to re-enable
   const WHATSAPP_ENABLED = false;
@@ -63,7 +66,14 @@
       burger.setAttribute('aria-expanded', open?'true':'false');
       document.body.style.overflow=open?'hidden':'';
     });
-    overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click', close));
+    overlay.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      overlay.classList.add('is-leaving');
+      close();
+    }));
+    window.addEventListener('pageshow',()=>{
+      overlay.classList.remove('is-leaving');
+      close();
+    });
   }
 
   document.querySelectorAll('.price-tab').forEach(tab=>{
@@ -76,6 +86,10 @@
       if(el) el.classList.add('active');
     });
   });
+
+  const requestedCategory=window.location.hash.slice(1);
+  const requestedTab=[...document.querySelectorAll('.price-tab')].find(tab=>(tab.dataset.tab||tab.dataset.category)===requestedCategory);
+  if(requestedTab) requestedTab.click();
 
   // Add a direct booking action to every service in the price list
   document.querySelectorAll('.price-category, .price-table').forEach(cat=>{
