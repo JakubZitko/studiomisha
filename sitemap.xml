@@ -2,50 +2,206 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://studiomisha.cz/</loc>
-        <lastmod>2026-09-01</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://studiomisha.cz/o-nas</loc>
-        <lastmod>2026-09-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://studiomisha.cz/sluzby</loc>
-        <lastmod>2026-09-01</lastmod>
+        <lastmod>2026-10-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://studiomisha.cz/cenik</loc>
-        <lastmod>2026-09-01</lastmod>
+        <lastmod>2026-10-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://studiomisha.cz/clanky</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/o-nas</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://studiomisha.cz/kontakt</loc>
-        <lastmod>2026-09-01</lastmod>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/jak-se-k-nam-dostat</loc>
+        <lastmod>2026-10-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://studiomisha.cz/garelie</loc>
-        <lastmod>2026-09-01</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://studiomisha.cz/jak-se-k-nam-dostat</loc>
-        <lastmod>2026-09-01</lastmod>
+        <loc>https://studiomisha.cz/faq</loc>
+        <lastmod>2026-10-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://studiomisha.cz/pravni-informace</loc>
-        <lastmod>2026-09-01</lastmod>
+        <lastmod>2026-10-29</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/hloubkove-cisteni-pleti-praha-4</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/chemicky-peeling-akne-natinuel</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/omlazeni-pleti-anti-aging-osetreni</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/karboxyterapie-obliceje-rxcarboxy</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/odstraneni-milii-na-obliceji</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/barveni-uprava-oboci-a-ras-praha-4</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/balayage-airtouch-foilyage-rozdily</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/hloubkove-cisteni-vlasu-malibu-c</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/redken-acidic-bonding-concentrate-pece</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/kadernictvi-praha-4-branik-strih-barveni</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/jak-pecovat-o-melirovane-a-blond-vlasy</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/barva-nebo-preliv-na-vlasy-jaky-je-rozdil</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/pristrojova-lymfodrenaz-praha-4-ucinky</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/masaz-zad-a-sije-pri-sedavem-zamestnani</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/masaz-s-raselinou-a-masazni-svickou</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/reflexni-masaz-chodidel-ucinky</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/sportovni-masaz-pred-a-po-vykonu</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/pedikura-praha-4-branik-kompletni-pece</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/praskliny-na-patach-a-kuri-oka-osetreni</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/gellak-na-nohy-vydrz-a-vyhody</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/japonska-manikura-p-shine-pro-slabe-nehty</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/gellak-nebo-gelove-nehty-zpevneni</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/pristrojova-a-kombinovana-manikura-vyhody</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://studiomisha.cz/poradna/darkovy-poukaz-kosmetika-masaze-praha-4</loc>
+        <lastmod>2026-10-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

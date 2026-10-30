@@ -91,6 +91,25 @@
   const requestedTab=[...document.querySelectorAll('.price-tab')].find(tab=>(tab.dataset.tab||tab.dataset.category)===requestedCategory);
   if(requestedTab) requestedTab.click();
 
+  // Blog category filtering on /clanky
+  const blogFilters=document.querySelectorAll('.blog-filter');
+  const articleCards=document.querySelectorAll('.article-card[data-cat]');
+  if(blogFilters.length&&articleCards.length){
+    const applyBlogFilter=(cat)=>{
+      blogFilters.forEach(b=>b.classList.toggle('active', b.dataset.filter===cat));
+      articleCards.forEach(card=>{
+        const match=(cat==='all'||card.dataset.cat===cat);
+        card.classList.toggle('is-hidden', !match);
+        if(match) card.classList.add('is-in');
+      });
+    };
+    blogFilters.forEach(btn=>btn.addEventListener('click',()=>applyBlogFilter(btn.dataset.filter||'all')));
+    if(requestedCategory){
+      const matchBtn=[...blogFilters].find(b=>b.dataset.filter===requestedCategory);
+      if(matchBtn) applyBlogFilter(requestedCategory);
+    }
+  }
+
   // Add a direct booking action to every service in the price list
   document.querySelectorAll('.price-category, .price-table').forEach(cat=>{
     cat.querySelectorAll('.price-item').forEach(item=>{
