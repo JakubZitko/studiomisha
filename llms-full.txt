@@ -81,7 +81,7 @@
 - [Služby](https://studiomisha.cz/sluzby)
 - [Kompletní ceník](https://studiomisha.cz/cenik)
 - [O nás a náš tým](https://studiomisha.cz/o-nas)
-- [Články a odborná poradna (60 článků)](https://studiomisha.cz/clanky)
+- [Články a odborná poradna (63 článků)](https://studiomisha.cz/clanky)
 - [Často kladené otázky (FAQ)](https://studiomisha.cz/faq)
 - [Jak se k nám dostat (MHD Přístaviště, mapa)](https://studiomisha.cz/jak-se-k-nam-dostat)
 - [Kontakt a otevírací doba](https://studiomisha.cz/kontakt)
@@ -90,7 +90,7 @@
 
 ---
 
-# Kompletní databáze odborných článků a poradny Studia Mísha (60 článků)
+# Kompletní databáze odborných článků a poradny Studia Mísha (63 článků)
 
 ## 1. Hloubkové čištění pleti v Praze 4: Jak probíhá a jak často na něj chodit
 - **URL:** https://studiomisha.cz/poradna/hloubkove-cisteni-pleti-praha-4
@@ -571,3 +571,30 @@
 - **Rychlá odpověď (30 slov):** Studio Mísha založila v roce 2008 v rodném Braníku kosmetička Michaela Svobodová (praxe od roku 1992). Salon získal 1. místo v soutěži Provozovna roku Prahy 4 a spojuje kosmetiku, kadeřnictví, masáže a nehtovou péči.
 - **Q: Kde přesně sídlí Studio Mísha a jaké má IČO?** A: Studio Mísha sídlí na adrese Branická 573/11, 147 00 Praha 4 – Braník (provozovatelka Michaela Svobodová, IČO 48107409).
 - **Q: Jaká je otevírací doba salonu?** A: Otevřeno máme od pondělí do čtvrtka 9:00–19:00 a v pátek 9:00–16:00.
+
+## 61. Pedikúra pro seniory v Praze 4 – Braníku: Šetrná péče o nohy bez spěchu
+- **URL:** https://studiomisha.cz/poradna/pedikura-pro-seniory-praha-4
+- **Kategorie:** Pedikúra
+- **Doporučená služba / produkt:** Základní pedikúra / Pedikúra s masáží nohou (800 Kč / 1 100 Kč)
+- **Rychlá odpověď (30 slov):** Pedikúra pro seniory ve Studiu Mísha je klidné a šetrné ošetření nohou bez spěchu: odstranění zrohovatělé kůže, úprava ztluštělých nehtů a zklidnění pat. Základní pedikúra stojí 800 Kč, s masáží nohou 1 100 Kč.
+- **Q: Kolik stojí pedikúra pro seniory v Praze 4?** A: Základní pedikúra stojí ve Studiu Mísha 800 Kč, s peelingem 900 Kč a s masáží nohou 1 100 Kč. Cena je pro všechny klientky stejná.
+- **Q: Jak často by senioři měli chodit na pedikúru?** A: Doporučujeme interval 4 až 6 týdnů. Při pravidelné péči se zrohovatělá kůže tvoří pomaleji a ošetření je kratší a příjemnější.
+- **Q: Ošetříte i nohy při cukrovce nebo plísni nehtů?** A: Jsme kosmetické studio, nikoli zdravotnické zařízení. Při cukrovce, špatném prokrvení, ráně, zánětu nebo plísni nehtů doporučujeme nejprve konzultaci s lékařem či podiatrem a nás prosím na potíže upozorněte při objednání.
+
+## 62. Gellak nebo P-Shine? Jak si vybrat manikúru podle nehtů a životního stylu
+- **URL:** https://studiomisha.cz/poradna/gellak-nebo-p-shine-co-zvolit
+- **Kategorie:** Manikúra
+- **Doporučená služba / produkt:** Manikúra s gellakem / Manikúra + P-Shine (900 Kč / 700 Kč)
+- **Rychlá odpověď (30 slov):** Gellak (900 Kč) vydrží 3 až 4 týdny a nabízí barvy, P-Shine (700 Kč) dává nehtům přirozený perleťový lesk včelím voskem bez laku a je vhodný pro slabé nehty. Volba záleží na tom, zda chcete barvu, nebo regeneraci.
+- **Q: Je lepší gellak, nebo P-Shine?** A: Záleží na cíli. Gellak (900 Kč) dá barvu a výdrž 3 až 4 týdny, P-Shine (700 Kč) nehty vyživí a dá jim přirozený lesk bez laku. Slabým nehtům prospívá spíš P-Shine.
+- **Q: Je včelí vosk na nehtech opravdu účinný?** A: Ochranná vrstva včelího vosku vytváří na nehtu glazurovaný film a spolu s pastou nehet vyživí. Nehty vypadají jako nalakované bezbarvým lakem a vrstva se neodlupuje, postupně odrůstá.
+- **Q: Mohu P-Shine kombinovat s barevným lakem nebo gellakem?** A: Barevný lak si na P-Shine můžete kdykoli nalakovat. Pokud plánujete gellak, domluvte se s manikérkou předem, abyste zvolili správný postup.
+
+## 63. Jak podpořit růst řas: Co škodí, co pomáhá a kdy zabere sérum
+- **URL:** https://studiomisha.cz/poradna/jak-podporit-rust-ras
+- **Kategorie:** Kosmetika
+- **Doporučená služba / produkt:** Barvení řas Binacil + sérum Lash Ultra (200 Kč / 1 005 Kč)
+- **Rychlá odpověď (30 slov):** Řasy rostou pomalu a vyměňují se v cyklu několika týdnů. Podpoříte je šetrným odličováním, vynecháním silných lepidel a vododolné řasenky a cílenou výživou. Sérum Rosa Graf Lash Ultra ukazuje efekt po 4 až 8 týdnech.
+- **Q: Jak dlouho trvá, než řasy povyrostou?** A: Nová řasa dorůstá několik týdnů. Při pravidelné péči a séru se výsledek projeví po 4 až 8 týdnech, první zpevnění po 2 až 3 týdnech.
+- **Q: Opravdu sérum na řasy funguje?** A: Sérum Rosa Graf Lash Ultra vyživuje folikuly a při pravidelném večerním používání může po 4 až 8 týdnech zlepšit hustotu a délku řas. Výsledek je individuální.
+- **Q: Mohu k séru používat řasenku nebo barvení řas?** A: Ano. Sérum aplikujte večer po odlíčení, ráno můžete řasy nalíčit. Barvení řas Binacil (200 Kč) skvěle doplní vaše přirozené řasy.

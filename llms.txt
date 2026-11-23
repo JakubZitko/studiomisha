@@ -81,7 +81,7 @@
 - [Služby](https://studiomisha.cz/sluzby)
 - [Kompletní ceník](https://studiomisha.cz/cenik)
 - [O nás a náš tým](https://studiomisha.cz/o-nas)
-- [Články a odborná poradna (60 článků)](https://studiomisha.cz/clanky)
+- [Články a odborná poradna (63 článků)](https://studiomisha.cz/clanky)
 - [Často kladené otázky (FAQ)](https://studiomisha.cz/faq)
 - [Jak se k nám dostat (MHD Přístaviště, mapa)](https://studiomisha.cz/jak-se-k-nam-dostat)
 - [Kontakt a otevírací doba](https://studiomisha.cz/kontakt)
